@@ -92,8 +92,7 @@
 			<i>We Care about our Planet Earth!</i>
 		</p>
 		<hr style="border: 2px solid black">
-		<Br>
-		<br>
+		<Br> <br>
 		<p class="w3-justify">We have created a fictional band website.
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 			eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -365,38 +364,7 @@
 	<!-- end of search charger -->
 
 	<!-- modal -->
-	<!-- modal -->
-	<!-- modal -->
-	<!-- modal -->
-	<!-- modal -->
-	<!-- modal -->
-	<!-- modal -->
-	<!-- modal -->
-	<!-- modal -->
-	<!-- modal -->
-	<!-- modal -->
-	<!-- modal -->
-	<!-- modal -->
-	<!-- modal -->
-	<!-- modal -->
-	<!-- modal -->
-	<!-- modal -->
-	<!-- modal -->
-	<!-- modal -->
-	<!-- modal -->
-	<!-- modal -->
-	<!-- modal -->
-	<!-- modal -->
-	<!-- modal -->
-	<!-- modal -->
-	<!-- modal -->
-	<!-- modal -->
-	<!-- modal -->
-	<!-- modal -->
-	<!-- modal -->
-	<!-- modal -->
-	<!-- modal -->
-	<!-- modal -->
+
 
 	<!-- modal / id=login / POST : name=id, password / hidden : value-->
 
@@ -455,37 +423,27 @@
 						<div class="w3-padding" style="margin: auto; text-align: center;">UserID</div>
 						<input
 							style="width: 100%; margin: auto; border: 1px solid white; background-color: white;"
-							class="w3-input" type="text" name="id" required>
+							class="w3-input" type="text" name="userId" required>
+							
 						<div class="w3-padding" style="margin: auto; text-align: center;">PassWord</div>
 						<input
 							style="width: 100%; margin: auto; border: 1px solid white; background-color: white;"
-							class="w3-input" type="password" name="password" required>
+							class="w3-input" type="password" name="userPassword" required>
 						<div class="w3-padding" style="margin: auto; text-align: center;">UserName</div>
 						<input
 							style="width: 100%; margin: auto; border: 1px solid white; background-color: white;"
-							class="w3-input" type="text" name="name" required>
+							class="w3-input" type="text" name="userNm" required>
 						<div class="w3-padding" style="margin: auto; text-align: center;">PhoneNumber</div>
 						<input
 							style="width: 100%; margin: auto; border: 1px solid white; background-color: white;"
-							class="w3-input" type="text" name="phone" required> <br>
+							class="w3-input" type="text" name="userPhoneNo" required> <br>
 
 						<div class=" w3-padding w3-center">
-							<select class="w3-select w3-border w3-padding" name="city_high">
+							<select class="w3-select w3-border w3-padding">
 								<option value="" disabled selected>city_high</option>
-								<option value="1">서울특별시</option>
-								<option value="2">강원도</option>
-								<option value="3">경기도</option>
-								<option value="4">경상도</option>
-								<option value="5">광주광역시</option>
-								<option value="6">대구광역시</option>
-								<option value="7">대전광역시</option>
-								<option value="8">부산광역시</option>
-								<option value="9">울산광역시</option>
-								<option value="10">전라도</option>
-								<option value="11">제주도</option>
-								<option value="12">충청도</option>
+								
 							</select> <select class="w3-select w3-border w3-padding"
-								style="margin-top: 15px;" name="city_middle">
+								style="margin-top: 15px;" name="cityMiddleNoFk">
 								<option value="" disabled selected>city_middle</option>
 							</select>
 						</div>
