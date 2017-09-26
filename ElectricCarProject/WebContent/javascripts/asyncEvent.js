@@ -18,6 +18,7 @@ function sendRequest(url, params, callback, method) {
 }
 
 
+//오리지널 1번
 /* CITY_HIGH_TB에 있는 시의 정보 리스트 가져오는 비동기 함수*/
 function loadByCityHigh(){
 	sendRequest(getContextPath() + '/asyncController', 'kinds=clickHigh', cityHighAjaxDomController, 'POST');
@@ -62,11 +63,11 @@ function cityMiddleAjaxDonController(){
 function sendSearch(){
     var highIndexValue =getOptionIndexValue("city_high");
     var middleIndexValue =getOptionIndexValue("city_middle");
-    sendRequest(getContextPath()+'/stationController',`high=${highIndexValue}&middle=${middleIndexValue}&command=selectSearch`,getCityListDomController,"GET");
+    sendRequest(getContextPath()+'/stationController',`high=${highIndexValue}&middle=${middleIndexValue}&command=selectSearch`,getCityList,"GET");
 }
 
-/* sendSearch() 에서 사용하는 콜백 함수 */
-function getCityListDomController(){
+
+function getCityList(){
 	document.getElementById("cityListTable").innerHTML = '';
 	var msg = '';
 	var jsonData = JSON.parse(httpRequest.responseText);
