@@ -2,7 +2,9 @@ package com.DAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.DTO.ChargerDataTableDTO;
@@ -127,18 +129,24 @@ public class ChargerDataTableDAO {
 		return cnt;
 	}
 
-	public List<GetChargerDataInfoDTO> getChargerDataList() throws Exception{
-		
+	
+	// search한 지역의 리스트 반환
+	public List<GetChargerDataInfoDTO> getChargerDataList(int middle) throws Exception {
+
 		Connection con = null;
 		PreparedStatement pstmt = null;
+		ResultSet rset = null;
 		StringBuilder sql = null;
+		List<GetChargerDataInfoDTO> list = null;
+		
 		try {
 			con = DBUtil.getConnection();
 			sql = new StringBuilder();
-			
+			list = new ArrayList<>();
+
 			sql.append("SELECT CHARGERDT.CHARGER_DATA_NO_PK ,CHT.CITY_HIGH_NM ,");
 			sql.append("CMT.CITY_MIDDLE_NM , CLT.CITY_LOW_NM, CCT.CS_CODE_NM ,");
-			sql.append(" CNT.CP_NAME_NM , CST.CP_STAT_NM , CHARGERTT.CHARGER_TYPE_NM , CTT.CP_TYPE_NM, CHARGERDT.LAT , CHARGERDT.LONGI");
+			sql.append("  CNT.CP_NAME_NM , CST.CP_STAT_NM , CHARGERTT.CHARGER_TYPE_NM , CTT.CP_TYPE_NM, CHARGERDT.LAT , CHARGERDT.LONGI , CLT.CITY_LOW_NO_PK ");
 			sql.append(" FROM CHARGER_DATA_TB CHARGERDT ");
 			sql.append(" INNER JOIN CS_CODE_TB CCT ON CHARGERDT.CS_CODE_CD_FK = CCT.CS_CODE_CD_PK");
 			sql.append(" INNER JOIN CP_NAME_TB CNT ON CHARGERDT.CP_NAME_CD_FK = CNT.CP_NAME_CD_PK");
@@ -148,17 +156,28 @@ public class ChargerDataTableDAO {
 			sql.append(" INNER JOIN CITY_LOW_TB CLT ON CHARGERDT.CITY_LOW_NO_FK = CLT.CITY_LOW_NO_PK");
 			sql.append(" INNER JOIN CITY_MIDDLE_TB CMT ON CLT.CITY_MIDDLE_NO_FK = CMT.CITY_MIDDLE_NO_PK");
 			sql.append(" INNER JOIN CITY_HIGH_TB CHT ON CMT.CITY_HIGH_NO_FK = CHT.CITY_HIGH_NO_PK ");
-			sql.append(" WHERE CLT.CITY_LOW_NO_PK = ?");
+			sql.append(" WHERE CLT.CITY_MIDDLE_NO_FK = ?");
 			sql.append(" ORDER BY CHARGERDT.CHARGER_DATA_NO_PK ASC");
-			System.out.println(sql.toString());
-			/*pstmt = con.prepareStatement(sql.toString());*/
+			pstmt = con.prepareStatement(sql.toString());
+			pstmt.setInt(1, middle);
+
+			rset = pstmt.executeQuery();
+
+			while (rset.next()) {
+				list.add(new GetChargerDataInfoDTO(rset.getInt(1), rset.getString(2), rset.getString(3),
+						rset.getString(4), rset.getString(5), rset.getString(6), rset.getString(7), rset.getString(8),
+						rset.getString(9) , rset.getDouble(10), rset.getDouble(11), rset.getInt(12)));
+			}
 		} catch (SQLException e) {
+			e.printStackTrace();
 			System.out.println("getChargerDataList 정보를 가져오는중 에러 발생!");
 			throw new Exception("getChargerDataList 정보를 가져오는중 에러 발생!");
+		} finally {
+			DBUtil.close(con, pstmt, rset);
 		}
-		
-		return null;
-		
+
+		return list;
+
 	}
 
 	// CHARGER_DATA_TB PK의 최대값 반환

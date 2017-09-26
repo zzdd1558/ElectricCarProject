@@ -12,6 +12,7 @@ public class GetChargerDataInfoDTO {
 	private String cpTypeNm;		// CP_TYPE_NM
 	private double lat;				// LAT
 	private double longi;			// LONGI
+	private int cityLowNoPk	;		// CITY_LOW_NO_PK
 	
 	//기본 생성자
 	public GetChargerDataInfoDTO() {
@@ -20,7 +21,7 @@ public class GetChargerDataInfoDTO {
 
 	public GetChargerDataInfoDTO(int chargerDataNoPk, String cityHighNm, String cityMiddleNm, String cityLowNm,
 			String csCodeNm, String cpNameNm, String cpStatNm, String chargerTypeNm, String cpTypeNm, double lat,
-			double longi) {
+			double longi, int cityLowNoPk) {
 		super();
 		this.chargerDataNoPk = chargerDataNoPk;
 		this.cityHighNm = cityHighNm;
@@ -33,6 +34,7 @@ public class GetChargerDataInfoDTO {
 		this.cpTypeNm = cpTypeNm;
 		this.lat = lat;
 		this.longi = longi;
+		this.cityLowNoPk = cityLowNoPk;
 	}
 
 	
@@ -123,6 +125,14 @@ public class GetChargerDataInfoDTO {
 
 	public void setLongi(double longi) {
 		this.longi = longi;
+	}
+
+	public int getCityLowNoPk() {
+		return cityLowNoPk;
+	}
+
+	public void setCityLowNoPk(int cityLowNoPk) {
+		this.cityLowNoPk = cityLowNoPk;
 	}
 	
 	

@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="stylesheets/ceos.css">
 <link rel="stylesheet" href="stylesheets/footer.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="javascripts/script.js"></script>
 <script src="javascripts/asyncEvent.js"></script>
 <script src="javascripts/signUpAsyncEvent.js"></script>
 <title>index.html</title>

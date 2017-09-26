@@ -12,6 +12,10 @@ import javax.servlet.jsp.PageContext;
 
 import com.DAO.ChargerDataTableDAO;
 import com.DTO.ChargerDataTableDTO;
+import com.DTO.GetChargerDataInfoDTO;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 
 public class StationController extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
@@ -48,9 +52,21 @@ public class StationController extends HttpServlet {
 	}// end of wordSearch
 
 	private void selectSearch(HttpServletRequest request, HttpServletResponse response) {
-		System.out.println(request.getParameter("middle"));
-		
-		
+		/*response.setContentType("application/json; charset=UTF-8");*/
+		response.setContentType("text/html; charset=utf-8");
+		ChargerDataTableDAO chargerDateDAO = ChargerDataTableDAO.getInstance();
+		try {
+			JSONArray array = JSONArray
+					.fromObject(chargerDateDAO.getChargerDataList(Integer.parseInt(request.getParameter("middle"))));
+			JSONObject jsonObject = new JSONObject();
+			jsonObject.put("data", array);
+
+			response.getWriter().println(jsonObject);
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("JSON 데이터 반환중 에러 발생!");
+		}
+
 	}
 
 }

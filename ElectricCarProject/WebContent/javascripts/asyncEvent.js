@@ -18,7 +18,6 @@ function sendRequest(url, params, callback, method) {
 }
 
 
-//오리지널 1번
 /* CITY_HIGH_TB에 있는 시의 정보 리스트 가져오는 비동기 함수*/
 function loadByCityHigh(){
 	sendRequest(getContextPath() + '/asyncController', 'kinds=clickHigh', cityHighAjaxDomController, 'POST');
@@ -63,20 +62,30 @@ function cityMiddleAjaxDonController(){
 function sendSearch(){
     var highIndexValue =getOptionIndexValue("city_high");
     var middleIndexValue =getOptionIndexValue("city_middle");
-    sendRequest(getContextPath()+'/stationController',`high=${highIndexValue}&middle=${middleIndexValue}&command=selectSearch`,getCityList,"GET");
+    sendRequest(getContextPath()+'/stationController',`high=${highIndexValue}&middle=${middleIndexValue}&command=selectSearch`,getCityListDomController,"GET");
 }
 
 
-function getCityList(){
-	document.getElementById("cityListTable").innerHTML = '';
+/* sendSearch() 에서 사용하는 콜백 함수 */
+function getCityListDomController(){
+	document.getElementById("tableTbody").innerHTML = '';
 	var msg = '';
 	var jsonData = JSON.parse(httpRequest.responseText);
-
 	for(var i = 0; i< jsonData.data.length; i++){
-        msg = msg + ``;
+        msg = msg + 
+        `
+        <tr>
+        <td width="87" style="text-align: center">${i+1}</td>
+        <td width="97" style="text-align: center">${jsonData.data[i].csCodeNm}</td>
+        <td width="154" style="text-align: center">${jsonData.data[i].cpNameNm}</td>
+        <td width="154" style="text-align: center">${jsonData.data[i].cpStatNm}</td>
+        <td width="130" style="text-align: center">${jsonData.data[i].chargerTypeNm}</td>
+        <td width="154" style="text-align: center">${jsonData.data[i].cpTypeNm}</td>
+        <td width="154" style="text-align: center">${jsonData.data[i].cityHighNm} ${jsonData.data[i].cityMiddleNm} ${jsonData.data[i].cityLowNm}</td>
+        <td><button style="width: 74px;">보기</button></td>
+        </tr>`;
     }
-
-    document.getElementById("cityListTable").innerHTML = msg;
+    document.getElementById("tableTbody").innerHTML = msg;
 }
 
 
