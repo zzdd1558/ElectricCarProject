@@ -57,6 +57,7 @@ public class MemberController extends HttpServlet {
 			if (loginCheck) {
 				/** 세션 생성 */
 				session = request.getSession();
+				System.out.println("sisisisisisiswisi" + userDTO.getManagerCdFk());
 				session.setAttribute("managerKey", userDTO.getManagerCdFk());
 			} else {
 				/** 세셩 생성 X And 로그인 페이지로 다시 이동 */

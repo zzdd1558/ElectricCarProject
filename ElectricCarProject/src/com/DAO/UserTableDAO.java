@@ -25,7 +25,7 @@ public class UserTableDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		int cnt = 0;
-		String sql = "INSERT INTO USER_TB VALUES ( ? , ? , ? , ? , ? , ? , 1 , ? )";
+		String sql = "INSERT INTO USER_TB VALUES ( ? , ? , ? , ? , ? , ? , 2 , ? )";
 		try {
 			con = DBUtil.getConnection();
 			pstmt = con.prepareStatement(sql);
@@ -101,7 +101,7 @@ public class UserTableDAO {
 	public UserTableDTO userLogin(String userId) throws Exception{
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		String sql = "SELECT USER_PASSWORD , USER_SALT_KEY FROM USER_TB WHERE USER_ID = ?";
+		String sql = "SELECT USER_PASSWORD , USER_SALT_KEY , MANAGER_CD_FK FROM USER_TB WHERE USER_ID = ?";
 		UserTableDTO userDTO = null;
 		try {
 			userDTO = new UserTableDTO();
@@ -113,6 +113,7 @@ public class UserTableDAO {
 			if(rset.next()){
 				userDTO.setUserPassword(rset.getString(1));
 				userDTO.setUserSaltKey(rset.getString(2));
+				userDTO.setManagerCdFk(rset.getInt(3));
 			}
 		} catch (Exception e) {
 			System.out.println("로그인 중 에러 발생!");
