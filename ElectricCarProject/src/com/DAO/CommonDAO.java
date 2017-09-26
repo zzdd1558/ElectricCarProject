@@ -23,7 +23,11 @@ public class CommonDAO{
 			if (rset.next()) {
 				cnt = rset.getInt(1);
 			}
-
+			
+			if(cnt == 0){
+				cnt = 1;
+			}
+			
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 			throw new Exception("정보를 가져오는도중 에러가 발생하였습니다.");

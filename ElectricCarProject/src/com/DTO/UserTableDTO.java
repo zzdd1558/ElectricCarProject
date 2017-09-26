@@ -6,18 +6,17 @@ public class UserTableDTO {
 	private String userPassword;	// user_Password
 	private String userNm;			// user_NM
 	private String userPhoneNo;		// user_Phone_NO
-	private int userSaltKey;		// user_Salt_Key
+	private String userSaltKey;		// user_Salt_Key
 	private int managerCdFk;		// manager_CD_FK
-	
+	private int cityMiddleNoFk;		// city_Middle_NO_FK
 	
 	// 기본 생성자
 	public UserTableDTO() {
 		// TODO Auto-generated constructor stub
 	}
 
-
 	public UserTableDTO(int userNoPk, String userId, String userPassword, String userNm, String userPhoneNo,
-			int userSaltKey, int managerCdFk) {
+			String userSaltKey, int managerCdFk, int cityMiddleNoFk) {
 		super();
 		this.userNoPk = userNoPk;
 		this.userId = userId;
@@ -26,9 +25,9 @@ public class UserTableDTO {
 		this.userPhoneNo = userPhoneNo;
 		this.userSaltKey = userSaltKey;
 		this.managerCdFk = managerCdFk;
+		this.cityMiddleNoFk = cityMiddleNoFk;
 	}
 
-	
 	// setter / getter 
 	public int getUserNoPk() {
 		return userNoPk;
@@ -80,12 +79,12 @@ public class UserTableDTO {
 	}
 
 
-	public int getUserSaltKey() {
+	public String getUserSaltKey() {
 		return userSaltKey;
 	}
 
 
-	public void setUserSaltKey(int userSaltKey) {
+	public void setUserSaltKey(String userSaltKey) {
 		this.userSaltKey = userSaltKey;
 	}
 
@@ -98,4 +97,14 @@ public class UserTableDTO {
 	public void setManagerCdFk(int managerCdFk) {
 		this.managerCdFk = managerCdFk;
 	}
+
+	public int getCityMiddleNoFk() {
+		return cityMiddleNoFk;
+	}
+
+	public void setCityMiddleNoFk(int cityMiddleNoFk) {
+		this.cityMiddleNoFk = cityMiddleNoFk;
+	}
+	
+	
 }
