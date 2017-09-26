@@ -8,6 +8,8 @@
 <link rel="stylesheet" href="../stylesheets/bar_a.css">
 <link rel="stylesheet" href="../stylesheets/search.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="../javascripts/script.js"></script>
+<script src="../javascripts/asyncEvent.js"></script>
 <style>
 #manageTables tr, th, td {
 	border: 1px solid black;
@@ -29,19 +31,22 @@
 			<a href="#home">HOME</a>
 		</div>
 		<div class="w3-bar-item w3-hover-green">
-			<a href="adminViews/manageView.jsp">MANAGE CHARGERS AND MEMBERS</a>
+			<a href="../adminViews/manageChargerView.jsp">MANAGE CHARGERS</a>
+		</div>
+		<div class="w3-bar-item w3-hover-green">
+			<a href="../adminViews/manageMemberView.jsp">MANAGE MEMBERS</a>
 		</div>
 		<div class="w3-bar-item w3-hover-yellow">
-			<a href="adminViews/statisticsView.jsp">STATISTICS</a>
+			<a href="../adminViews/statisticsView.jsp">STATISTICS</a>
 		</div>
 		<div class="w3-bar-item w3-hover-pink">
-			<a href="adminViews/modifyInfoView.jsp">MODIFY INFO</a>
+			<a href="../adminViews/modifyInfoView.jsp">MODIFY INFO</a>
 		</div>
 		<div class="w3-bar-item w3-hover-grey">
-			<a href="adminViews/emailView.jsp">E-MAIL</a>
+			<a href="../adminViews/emailView.jsp">E-MAIL</a>
 		</div>
 		<div class="w3-bar-item w3-hover-white">
-			<a href="memberController?command=logout">LOGOUT</a>
+			<a href="../memberController?command=logout">LOGOUT</a>
 		</div>
 	</div>
 
@@ -61,8 +66,8 @@
 			<!-- CS 테이블 -->
 			<div class="w3-cell">
 				<div class="w3-container" id="manageTables">
-					<h2>CHARGER TABLE</h2><br>
-					
+					<h1 style="font-size:45px;">CHARGER TABLE</h1><br>
+					<div><button style="margin-right:1;" class="w3-button w3-black w3-right w3-margin">추가</button></div>
 					
 					<table class="w3-table">
 						<tr>
@@ -120,15 +125,15 @@
 							style="font-size: 14px; margin-top: 30px;"
 							action="${pageContext.request.contextPath}/stationController">
 							
-							<select style="width:40%" class="w3-margin w3-select w3-border w3-padding" name="city_high"
-								onclick="loadByCityHigh();" onchange="loadBy">
+							<select style="width:40%" class="w3-margin w3-select w3-border w3-padding" name="city_high" id="city_high"
+								onfocus="loadByCityHigh();" onchange="document.getElementById('city_middle').focus();">
 								<option value="" disabled selected>city_high</option>
 								<option value="1">서울특별시</option>
 							</select> 
 							
 							<select class="w3-margin w3-select w3-border w3-padding"
-								style="width:40%; margin-top:15px;" name="city_middle"
-								onclick="loadByCityMiddle();">
+								style="width:40%; margin-top:15px;" name="city_middle" id="city_middle"
+								onfocus="loadByCityMiddle();">
 								<option value="" disabled selected>city_middle</option>
 							</select> 
 							

@@ -13,7 +13,7 @@
 <title>index.html</title>
 </head>
 <body>
-
+'
 	<!-- bars -->
 
 	<!-- before bar -->
@@ -454,12 +454,13 @@
 						<br>
 
 						<div class=" w3-padding w3-center">
-							<select class="w3-select w3-border w3-padding">
-								<option value="1" selected>city_high</option>
+							<select class="w3-select w3-border w3-padding" onfocus="loadByCityHigh();"
+				onchange="document.getElementById('city_middle').focus();" id="city_high" name="city_high">
+								<option disabled selected>시/도</option>
 
 							</select> <select class="w3-select w3-border w3-padding"
-								style="margin-top: 15px;" name="cityMiddleNoFk">
-								<option value="1" selected>city_middle</option>
+								style="margin-top: 15px;" d="city_middle" name="city_middle" onfocus="loadByCityMiddle();">
+								<option disabled selected>시/군/구</option>
 							</select>
 						</div>
 
