@@ -48,13 +48,27 @@
 		<%
 			} else if (session.getAttribute("managerKey").equals(new Integer(2))) {
 		%>
-		<div class="w3-bar-item w3-hover-red">HOME</div>
-		<div class="w3-bar-item w3-hover-green"></div>
-		<div class="w3-bar-item w3-hover-blue"></div>
-		<div class="w3-bar-item w3-hover-yellow">MANAGE MAMBERS</div>
-		<div class="w3-bar-item w3-hover-pink">STATIC</div>
-		<div class="w3-bar-item w3-hover-grey">MANAGE</div>
-		<div class="w3-bar-item w3-hover-white">LOGOUT</div>
+		<div class="w3-bar-item w3-hover-red">
+			<a href="#home">HOME</a>
+		</div>
+		<div class="w3-bar-item w3-hover-green">
+			<a href="adminViews/manageChargerView.jsp">MANAGE CHARGERS</a>
+		</div>
+		<div class="w3-bar-item w3-hover-green">
+			<a href="adminViews/manageMemberView.jsp">MANAGE MEMBERS</a>
+		</div>
+		<div class="w3-bar-item w3-hover-yellow">
+			<a href="adminViews/statisticsView.jsp">STATISTICS</a>
+		</div>
+		<div class="w3-bar-item w3-hover-pink">
+			<a href="adminViews/modifyInfoView.jsp">MODIFY INFO</a>
+		</div>
+		<div class="w3-bar-item w3-hover-grey">
+			<a href="adminViews/emailView.jsp">E-MAIL</a>
+		</div>
+		<div class="w3-bar-item w3-hover-white">
+			<a href="memberController?command=logout">LOGOUT</a>
+		</div>
 
 		<%
 			} else if (session.getAttribute("managerKey").equals(new Integer(1))) {
@@ -312,7 +326,6 @@
 	<br style="line-height: 20;">
 
 	<!-- end of about -->
-
 
 
 	<!-- 만든사람 -->
