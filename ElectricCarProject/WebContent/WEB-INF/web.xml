@@ -20,4 +20,14 @@
     <servlet-name>MemberController</servlet-name>
     <url-pattern>/memberController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>StationController</display-name>
+    <servlet-name>StationController</servlet-name>
+    <servlet-class>com.Controller.StationController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StationController</servlet-name>
+    <url-pattern>/stationController</url-pattern>
+  </servlet-mapping>
 </web-app>
