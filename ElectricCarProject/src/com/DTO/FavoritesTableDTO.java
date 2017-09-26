@@ -4,7 +4,7 @@ public class FavoritesTableDTO {
 	
 	private int favoriteNoPk;		// favorite_NO_PK
 	private int userNoFk;			// user_NO_FK
-	private int cityLowNoFk;		// city_Low_NO_FK
+	private int chargerNoFk;		// charge_NO_FK
 	private String favoriteScore;	// favorite_Score
 	
 	
@@ -13,11 +13,11 @@ public class FavoritesTableDTO {
 		// TODO Auto-generated constructor stub
 	}
 
-	public FavoritesTableDTO(int favoriteNoPk, int userNoFk, int cityLowNoFk, String favoriteScore) {
+	public FavoritesTableDTO(int favoriteNoPk, int userNoFk, int chargerNoFk, String favoriteScore) {
 		super();
 		this.favoriteNoPk = favoriteNoPk;
 		this.userNoFk = userNoFk;
-		this.cityLowNoFk = cityLowNoFk;
+		this.chargerNoFk = chargerNoFk;
 		this.favoriteScore = favoriteScore;
 	}
 	
@@ -40,11 +40,11 @@ public class FavoritesTableDTO {
 	}
 
 	public int getCityLowNoFk() {
-		return cityLowNoFk;
+		return chargerNoFk;
 	}
 
-	public void setCityLowNoFk(int cityLowNoFk) {
-		this.cityLowNoFk = cityLowNoFk;
+	public void setCityLowNoFk(int chargerNoFk) {
+		this.chargerNoFk = chargerNoFk;
 	}
 
 	public String getFavoriteScore() {
