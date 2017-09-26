@@ -1,12 +1,8 @@
 package com.DAO;
 
-public class ChargerTypeTableDAO  implements CommonDAO{
+public class ChargerTypeTableDAO{
 
-	
-	@Override
-	public void getMaxNo() {
-		// TODO Auto-generated method stub
-		
+	public int getMaxNo() throws Exception{
+		return CommonDAO.getMaxNo("SELECT (MAX(charger_Type_CD_PK)+1) AS max_NO FROM CHARGER_TYPE_TB");
 	}
-	
 }

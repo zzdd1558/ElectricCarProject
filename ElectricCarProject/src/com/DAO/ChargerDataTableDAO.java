@@ -1,23 +1,9 @@
 package com.DAO;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+public class ChargerDataTableDAO {
 
-import com.Utils.DBUtil;
-
-public class ChargerDataTableDAO implements CommonDAO {
-
-	@Override
-	public void getMaxNo() {
-		// TODO Auto-generated method stub
-		try {
-			Connection con = DBUtil.getConnection();
-			PreparedStatement pstmt = con.prepareStatement("1");
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public int getMaxNo() throws Exception{
+		return CommonDAO.getMaxNo("SELECT (MAX(CHARGER_NO_PK)+1) AS max_NO FROM CHARGER_DATA_TB");
 	}
 
 }
