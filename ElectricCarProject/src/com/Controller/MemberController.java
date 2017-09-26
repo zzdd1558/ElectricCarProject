@@ -40,20 +40,16 @@ public class MemberController extends HttpServlet {
 			info(request, response);
 		} else if ("logout".equals(command)) {
 			/** 로그아웃 */
-			System.out.println("logouttttttttt");
 			logout(request, response);
-			System.out.println("logouttttttttt");
 		}	
 		
 	}
 
 	private void logout(HttpServletRequest request, HttpServletResponse response) {
-		System.out.println("logouttttttttt");
-		
+		System.out.println("logout");
 		HttpSession session = request.getSession();
-		session.getCreationTime();
+		session.invalidate();
 		session = null;
-		System.out.println("logouttttttttt");
 		try {
 			response.sendRedirect("index.jsp");
 		} catch (IOException e) {
@@ -97,7 +93,7 @@ public class MemberController extends HttpServlet {
 		userDTO.setUserId(request.getParameter("userId"));
 		userDTO.setUserNm(request.getParameter("userNm"));
 		userDTO.setUserPhoneNo(request.getParameter("userPhoneNo"));
-		userDTO.setCityMiddleNoFk(Integer.parseInt(request.getParameter("cityMiddleNoFk")));
+		userDTO.setCityMiddleNoFk(Integer.parseInt(request.getParameter("city_middle")));
 
 		
 		// 비밀번호 암호화와 Salt Key 내부적으로 setter 동작
