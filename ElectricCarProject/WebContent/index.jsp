@@ -10,7 +10,8 @@
 <link rel="stylesheet" href="stylesheets/search.css">
 <link rel="stylesheet" href="stylesheets/ceos.css">
 <link rel="stylesheet" href="stylesheets/footer.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="javascripts/script.js"></script>
 <script src="javascripts/asyncEvent.js"></script>
 <script src="javascripts/signUpAsyncEvent.js"></script>
@@ -123,28 +124,8 @@
 		<hr style="border: 2px solid black">
 
 		<!-- search bar -->
-		<form action="${pageContext.request.contextPath}/stationController">
-			<input class="search w3-center" type="text" name="str"
-				placeholder="Search.."> <input type="hidden" name="command"
-				value="wordSearch">
-
-			<button type="submit" class="w3-btn w3-black"
-				style="margin-left: 10px; margin-bottom: 5px;">GO!</button>
-		</form>
-		<!-- end of search bar  -->
-
-	</div>
-
-
-	<!-- 메인 select Box -->
-	<!-- select search / hidden value = selectSearch / name:city_high, city_middle / value:1~12 -->
-
-	<div class="w3-cell-row w3-center" style="width: 80%; margin: auto;">
 
 		<div class="w3-container w3-cell" style="width: 35%">
-			<%-- <form class="w3-container w3-card-4"
-				style="padding-top: 20px; font-size: 14px;"
-				action="${pageContext.request.contextPath}/stationController"> --%>
 			<select class="w3-select w3-border w3-padding" id="city_high"
 				name="city_high" onfocus="loadByCityHigh();"
 				onchange="document.getElementById('city_middle').focus();">
@@ -157,35 +138,45 @@
 			</select> <input type="hidden" name="command" value="selectSearch">
 			<button class="w3-btn w3-black w3-right w3-margin w3-padding"
 				onclick="sendSearch()">Search</button>
-			<!-- </form> -->
 		</div>
+		<div class="w3-container w3-cell" style="width: 55%">
+			<input class="search w3-center" type="text" name="str"
+				placeholder="Search.."> <input type="hidden" name="command"
+				value="wordSearch">
 
-		<div class="w3-container w3-cell" style="width: 70%">
+			<button type="submit" class="w3-btn w3-black"
+				style="margin-left: 10px; margin-bottom: 5px;">GO!</button>
+		</div>
+		<!-- end of search bar  -->
+
+	</div>
+
+
+	<!-- 메인 select Box -->
+	<!-- select search / hidden value = selectSearch / name:city_high, city_middle / value:1~12 -->
+
+	<div class="w3-cell-row w3-center" style="width: 80%; margin: auto;">
+
+
+
+		<div class="w3-container w3-cell" style="width: 100%">
 			<!-- 검색된 테이블 id=resultTable -->
 			<div id="resultTable" class="w3-container">
 				<table class="w3-table-all" id="cityListTable">
 					<thead>
 						<tr class="w3-black w3-text-yellow">
-							<th>번호</th>
-							<th>충전소</th>
-							<th>충전기 명칭</th>
-							<th>충전기 상태</th>
-							<th>충전 방식</th>
-							<th>충전기 타입</th>
-							<th>장소</th>
+							<th style="text-align: center;">번호</th>
+							<th style="text-align: center;">충전소</th>
+							<th style="text-align: center;">충전기 명칭</th>
+							<th style="text-align: center;">충전기 상태</th>
+							<th style="text-align: center;">충전 방식</th>
+							<th style="text-align: center;">충전기 타입</th>
+							<th style="text-align: center;">장소</th>
+							<th style="text-align: center;">보기</th>
 						</tr>
 					</thead>
-					<tbody>
-						<tr>
-							<!-- for문 돌려야되는 부분  -->
-							<td>a</td>
-							<td>a</td>
-							<td>a</td>
-							<td>a</td>
-							<td>a</td>
-							<td>a</td>
-							<td>a</td>
-						</tr>
+					<tbody id="tableTbody">
+
 					</tbody>
 				</table>
 			</div>
@@ -350,10 +341,11 @@
 				<p class="w3-opacity">
 					<i>FOUNDER, CEO, ENGINEER, PLAYBOY</i>
 				</p>
-				<p style="width:80%; margin-left:32px;"> CEO 최윤진은 '제노차저'의 전설적인 창립자로 뛰어난 엔지니어이자 자상한 아버지 훌륭한 남편이기도 하다. 
-				그는 이제 지구의 모든 화석연료가 친환경에너지로 대체되어야 한다고 말하며 자신의 비전을 위해
-				과감한 행보를 보이는 젊은 사업가이다. 2036년 뉴욕타임스에서 선정한 세계에서 가장 영향력있는 '100인의 CEO'에 선정되었으며 
-				전세계에 236개 지점 5만여명의 사원이 그와 함께 나아가고 있다.</p>
+				<p style="width: 80%; margin-left: 32px;">CEO 최윤진은 '제노차저'의 전설적인
+					창립자로 뛰어난 엔지니어이자 자상한 아버지 훌륭한 남편이기도 하다. 그는 이제 지구의 모든 화석연료가 친환경에너지로
+					대체되어야 한다고 말하며 자신의 비전을 위해 과감한 행보를 보이는 젊은 사업가이다. 2036년 뉴욕타임스에서 선정한
+					세계에서 가장 영향력있는 '100인의 CEO'에 선정되었으며 전세계에 236개 지점 5만여명의 사원이 그와 함께 나아가고
+					있다.</p>
 			</div>
 			<div class="w3-third">
 				<img src="images/founders/ceo3.jpg" class="w3-round"
@@ -362,16 +354,18 @@
 				<p class="w3-opacity">
 					<i>DOG</i>
 				</p>
-				<p style="width:80%; margin-left:32px;">라일리는 제노차저의 창업 초기부터 함께한 임원이나 다름 없는 충견이다. 주식회사 제노차저의 지분을 13%소유하고 있다.</p>
+				<p style="width: 80%; margin-left: 32px;">라일리는 제노차저의 창업 초기부터 함께한
+					임원이나 다름 없는 충견이다. 주식회사 제노차저의 지분을 13%소유하고 있다.</p>
 			</div>
 			<div class="w3-third">
 				<img src="images/founders/ceo2.jpg" class="w3-round"
-					alt="Random Name" >
+					alt="Random Name">
 				<p>HONG</p>
 				<p class="w3-opacity">
 					<i>DESIGNER</i>
 				</p>
-				<p style="width:80%; margin-left:32px;">주식회사 제노차저의 수석 디자이너로 창업 원년 멤버이다. 초밥을 좋아한다.</p>
+				<p style="width: 80%; margin-left: 32px;">주식회사 제노차저의 수석 디자이너로 창업
+					원년 멤버이다. 초밥을 좋아한다.</p>
 			</div>
 		</div>
 	</div>
@@ -381,28 +375,75 @@
 
 	<!-- footer -->
 
-	<div style="width:100%; height:50px; background-color:yellow;border:5px solid black;">
+	<div
+		style="width: 100%; height: 50px; background-color: yellow; border: 5px solid black;">
 		<div class="w3-cell-row">
-			<div class="w3-cell" id="b"></div><div class="w3-cell" id="y"></div><div class="w3-cell" id="b"></div><div class="w3-cell" id="y"></div><div class="w3-cell" id="b"></div><div class="w3-cell" id="y"></div><div class="w3-cell" id="b"></div><div class="w3-cell" id="y"></div>
-			<div class="w3-cell" id="b"></div><div class="w3-cell" id="y"></div><div class="w3-cell" id="b"></div><div class="w3-cell" id="y"></div>
-			<div class="w3-cell" id="b"></div><div class="w3-cell" id="y"></div><div class="w3-cell" id="b"></div><div class="w3-cell" id="y"></div>
-			<div class="w3-cell" id="b"></div><div class="w3-cell" id="y"></div><div class="w3-cell" id="b"></div><div class="w3-cell" id="y"></div>
-			<div class="w3-cell" id="b"></div><div class="w3-cell" id="y"></div><div class="w3-cell" id="b"></div><div class="w3-cell" id="y"></div><div class="w3-cell" id="b"></div><div class="w3-cell" id="y"></div><div class="w3-cell" id="b"></div><div class="w3-cell" id="y"></div>
-			<div class="w3-cell" id="b"></div><div class="w3-cell" id="y"></div><div class="w3-cell" id="b"></div><div class="w3-cell" id="y"></div>
-			<div class="w3-cell" id="b"></div><div class="w3-cell" id="y"></div><div class="w3-cell" id="b"></div><div class="w3-cell" id="y"></div>
-			<div class="w3-cell" id="b"></div><div class="w3-cell" id="y"></div><div class="w3-cell" id="b"></div><div class="w3-cell" id="y"></div>
-			<div class="w3-cell" id="b"></div><div class="w3-cell" id="y"></div><div class="w3-cell" id="b"></div><div class="w3-cell" id="y"></div><div class="w3-cell" id="b"></div><div class="w3-cell" id="y"></div><div class="w3-cell" id="b"></div><div class="w3-cell" id="y"></div>
-			<div class="w3-cell" id="b"></div><div class="w3-cell" id="y"></div><div class="w3-cell" id="b"></div><div class="w3-cell" id="y"></div>
+			<div class="w3-cell" id="b"></div>
+			<div class="w3-cell" id="y"></div>
+			<div class="w3-cell" id="b"></div>
+			<div class="w3-cell" id="y"></div>
+			<div class="w3-cell" id="b"></div>
+			<div class="w3-cell" id="y"></div>
+			<div class="w3-cell" id="b"></div>
+			<div class="w3-cell" id="y"></div>
+			<div class="w3-cell" id="b"></div>
+			<div class="w3-cell" id="y"></div>
+			<div class="w3-cell" id="b"></div>
+			<div class="w3-cell" id="y"></div>
+			<div class="w3-cell" id="b"></div>
+			<div class="w3-cell" id="y"></div>
+			<div class="w3-cell" id="b"></div>
+			<div class="w3-cell" id="y"></div>
+			<div class="w3-cell" id="b"></div>
+			<div class="w3-cell" id="y"></div>
+			<div class="w3-cell" id="b"></div>
+			<div class="w3-cell" id="y"></div>
+			<div class="w3-cell" id="b"></div>
+			<div class="w3-cell" id="y"></div>
+			<div class="w3-cell" id="b"></div>
+			<div class="w3-cell" id="y"></div>
+			<div class="w3-cell" id="b"></div>
+			<div class="w3-cell" id="y"></div>
+			<div class="w3-cell" id="b"></div>
+			<div class="w3-cell" id="y"></div>
+			<div class="w3-cell" id="b"></div>
+			<div class="w3-cell" id="y"></div>
+			<div class="w3-cell" id="b"></div>
+			<div class="w3-cell" id="y"></div>
+			<div class="w3-cell" id="b"></div>
+			<div class="w3-cell" id="y"></div>
+			<div class="w3-cell" id="b"></div>
+			<div class="w3-cell" id="y"></div>
+			<div class="w3-cell" id="b"></div>
+			<div class="w3-cell" id="y"></div>
+			<div class="w3-cell" id="b"></div>
+			<div class="w3-cell" id="y"></div>
+			<div class="w3-cell" id="b"></div>
+			<div class="w3-cell" id="y"></div>
+			<div class="w3-cell" id="b"></div>
+			<div class="w3-cell" id="y"></div>
+			<div class="w3-cell" id="b"></div>
+			<div class="w3-cell" id="y"></div>
+			<div class="w3-cell" id="b"></div>
+			<div class="w3-cell" id="y"></div>
+			<div class="w3-cell" id="b"></div>
+			<div class="w3-cell" id="y"></div>
+			<div class="w3-cell" id="b"></div>
+			<div class="w3-cell" id="y"></div>
 		</div>
 	</div>
 
 	<footer class="w3-container w3-black w3-center">
-  	
-  	<div>
-  	<img class="w3-hover-sepia" style="margin-top:110px; width:280px; height:165px; " src="${pageContext.request.contextPath}/images/login/open.jpg" >
-  	</div>
-	<div style="font-size:20px;margin-top:;"><i class="fa fa-battery-three-quarters"></i>&nbsp;제노차저</div>
-	
+
+		<div>
+			<img class="w3-hover-sepia"
+				style="margin-top: 110px; width: 280px; height: 165px;"
+				src="${pageContext.request.contextPath}/images/login/open.jpg">
+		</div>
+		<div style="font-size: 20px; margin-top:;">
+			<i class="fa fa-battery-three-quarters"></i>&nbsp;제노차저
+		</div>
+
 
 	</footer>
 
@@ -494,12 +535,15 @@
 						<br>
 
 						<div class=" w3-padding w3-center">
-							<select class="w3-select w3-border w3-padding" onfocus="signUpLoadByCityHigh();"
-				onchange="document.getElementById('sign_city_middle').focus();" id="sign_city_high" name="city_high">
+							<select class="w3-select w3-border w3-padding"
+								onfocus="signUpLoadByCityHigh();"
+								onchange="document.getElementById('sign_city_middle').focus();"
+								id="sign_city_high" name="city_high">
 								<option disabled selected>시/도</option>
 
 							</select> <select class="w3-select w3-border w3-padding"
-								style="margin-top: 15px;" id="sign_city_middle" name="city_middle" onfocus="signUpLoadByCityMiddle();">
+								style="margin-top: 15px;" id="sign_city_middle"
+								name="city_middle" onfocus="signUpLoadByCityMiddle();">
 								<option disabled selected>시/군/구</option>
 							</select>
 						</div>
