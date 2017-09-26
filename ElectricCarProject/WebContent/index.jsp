@@ -17,6 +17,7 @@
 
 	<!-- before bar -->
 	<div class="w3-bar w3-black" style="position: fixed; z-index: 1000;">
+
 		<div class="w3-bar-item w3-hover-red">
 			<a href="#home">HOME</a>
 		</div>
@@ -40,6 +41,7 @@
 		<div onclick="document.getElementById('signup').style.display='block'"
 			class="w3-bar-item w3-hover-white">SIGN UP</div>
 	</div>
+	
 
 	<!-- after bar -->
 	<!-- <div class="w3-bar w3-black">
@@ -69,7 +71,6 @@
 
 	<!-- class="w3-display-container w3-content w3-wide"  -->
 
-
 	<header style="max-width: 100%;" id="home">
 		<div class="w3-display-container w3-text-white">
 			<img style="width: 100%; height:;" src="img/header/header7.jpg">
@@ -85,7 +86,7 @@
 	<!-- end of header -->
 
 
-	<!-- search charger / hidden value = typeSearch -->
+	<!-- search charger / hidden value = wordSearch / input name=str -->
 
 	<div class="w3-container w3-content w3-center w3-padding-48"
 		style="max-width: 1200px" id="search">
@@ -99,7 +100,7 @@
 
 		<!-- search bar -->
 		<form action="${pageContext.request.contextPath}/stationController">
-			<input class="search w3-center" type="text" name="search"
+			<input class="search w3-center" type="text" name="str"
 				placeholder="Search..">
 			<input type="hidden" name="command" value="wordSearch">
 			<button type="submit" class="w3-btn w3-black"
@@ -131,7 +132,8 @@
 					<option value="11">제주도</option>
 					<option value="12">충청도</option>
 				</select> <select class="w3-select w3-border w3-padding"
-					style="margin-top: 15px;" name="city_middle">
+						style="margin-top: 15px;" name="city_middle">
+				<!-- city_middle이 테이블로 가져와져서 돌려야되는 부분 -->
 					<option value="" disabled selected>city_middle</option>
 				</select> <input type="hidden" name="command" value="selectSearch">
 				<button class="w3-btn w3-black w3-right w3-margin w3-padding"
@@ -156,6 +158,8 @@
 						</tr>
 					</thead>
 					<tr>
+					
+					<!-- for문 돌려야되는 부분  -->
 						<td>a</td>
 						<td>a</td>
 						<td>a</td>

@@ -2,6 +2,7 @@ package com.DAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.util.List;
 
 import com.DTO.ChargerDataTableDTO;
 import com.DTO.ChargerTypeTableDTO;
@@ -16,6 +17,28 @@ public class ChargerDataTableDAO {
 			instance = new ChargerDataTableDAO();
 		}
 		return instance;
+	}
+
+	// CHARGER_DATA_TB에서 입력된 String 값을 가지고 있는 로우들을 result set으로 먼저 받고, 결국에는 list형태로 반환받는다.
+	public List<ChargerDataTableDTO> wordSearchChargerData(String str) throws Exception{
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		int cnt = 0;
+		String sql = "SELECT * FROM CHARGER_DATA_TB WHERE ";
+		
+		try {
+
+			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement(sql);
+			cnt = pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			System.out.println("wordSearchChargerData SELECT중 에러 발생!");
+			throw new Exception("wordSearchChargerData SELECT중 에러 발생!");
+		} finally {
+			DBUtil.close(con, pstmt);
+		}
+		return null;
 	}
 	
 
