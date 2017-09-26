@@ -1,6 +1,3 @@
-<%@page import="com.DAO.FavoritesTableDAO"%>
-<%@page import="java.sql.Connection"%>
-<%@page import="com.Utils.DBUtil"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE>
