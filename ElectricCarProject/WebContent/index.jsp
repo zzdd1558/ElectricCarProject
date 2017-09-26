@@ -138,22 +138,22 @@
 	<div class="w3-cell-row w3-center" style="width: 80%; margin: auto;">
 
 		<div class="w3-container w3-cell" style="width: 35%">
-			<form class="w3-container w3-card-4"
+			<%-- <form class="w3-container w3-card-4"
 				style="padding-top: 20px; font-size: 14px;"
-				action="${pageContext.request.contextPath}/stationController">
-				<select class="w3-select w3-border w3-padding" id="city_high"
-					name="city_high" onfocus="loadByCityHigh();"
-					onchange="document.getElementById('city_middle').focus();">
-					<option value="" disabled selected>도시 선택</option>
+				action="${pageContext.request.contextPath}/stationController"> --%>
+			<select class="w3-select w3-border w3-padding" id="city_high"
+				name="city_high" onfocus="loadByCityHigh();"
+				onchange="document.getElementById('city_middle').focus();">
+				<option value="" disabled selected>도시 선택</option>
 
-				</select> <select class="w3-select w3-border w3-padding"
-					style="margin-top: 15px;" id="city_middle" name="city_middle"
-					onfocus="loadByCityMiddle();">
-					<option value="" disabled selected>시/군/구 선택</option>
-				</select> <input type="hidden" name="command" value="selectSearch">
-				<button class="w3-btn w3-black w3-right w3-margin w3-padding"
-					type="submit">Search</button>
-			</form>
+			</select> <select class="w3-select w3-border w3-padding"
+				style="margin-top: 15px;" id="city_middle" name="city_middle"
+				onfocus="loadByCityMiddle();">
+				<option value="" disabled selected>시/군/구 선택</option>
+			</select> <input type="hidden" name="command" value="selectSearch">
+			<button class="w3-btn w3-black w3-right w3-margin w3-padding"
+				onclick="sendSearch()">Search</button>
+			<!-- </form> -->
 		</div>
 
 		<div class="w3-container w3-cell" style="width: 70%">
@@ -162,28 +162,27 @@
 				<table class="w3-table-all">
 					<thead>
 						<tr class="w3-black w3-text-yellow">
-							<th>charger_NO</th>
-							<th>cs_CODE_CD</th>
-							<th>cp_unique_NO</th>
-							<th>cp_Name_CD</th>
-							<th>cp_Stat_CD</th>
-							<th>cp_Type_CD</th>
-							<th>charger_Type</th>
-							<th>city_LOW</th>
+							<th>번호</th>
+							<th>충전소</th>
+							<th>충전기 명칭</th>
+							<th>충전기 상태</th>
+							<th>충전 방식</th>
+							<th>충전기 타입</th>
+							<th>장소</th>
 						</tr>
 					</thead>
-					<tr>
-
-						<!-- for문 돌려야되는 부분  -->
-						<td>a</td>
-						<td>a</td>
-						<td>a</td>
-						<td>a</td>
-						<td>a</td>
-						<td>a</td>
-						<td>a</td>
-						<td>a</td>
-					</tr>
+					<tbody>
+						<tr>
+							<!-- for문 돌려야되는 부분  -->
+							<td>a</td>
+							<td>a</td>
+							<td>a</td>
+							<td>a</td>
+							<td>a</td>
+							<td>a</td>
+							<td>a</td>
+						</tr>
+					</tbody>
 				</table>
 			</div>
 
