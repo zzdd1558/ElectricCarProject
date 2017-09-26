@@ -42,6 +42,7 @@ public class MemberController extends HttpServlet {
 		}
 	}
 
+	// 로그인 영역
 	private void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String userId = request.getParameter("userId");
 		String userPassword = request.getParameter("userPassword");
@@ -68,6 +69,8 @@ public class MemberController extends HttpServlet {
 		request.getRequestDispatcher(url).forward(request, response);
 	}
 
+	
+	//회원가입 영역
 	private void insertMember(HttpServletRequest request, HttpServletResponse response) {
 		UserTableDTO userDTO = new UserTableDTO();
 		UserTableDAO userDAO = UserTableDAO.getInstance();

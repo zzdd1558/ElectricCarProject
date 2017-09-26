@@ -253,8 +253,6 @@
 
 	<!-- end of founders -->
 
-=======
->>>>>>> branch 'master' of https://github.com/zzdd1558/ElectricCarProject.git
 	<!-- search charger / hidden value = typeSearch -->
 
 	<div class="w3-container w3-content w3-center w3-padding-48"
