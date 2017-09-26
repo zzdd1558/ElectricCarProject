@@ -70,7 +70,7 @@
 			}
 		%>
 	</div>
-	
+
 	<!-- end of bars -->
 
 	<!-- header -->
@@ -107,9 +107,9 @@
 		<!-- search bar -->
 		<form action="${pageContext.request.contextPath}/stationController">
 			<input class="search w3-center" type="text" name="str"
-				placeholder="Search..">
-			<input type="hidden" name="command" value="wordSearch">
-			
+				placeholder="Search.."> <input type="hidden" name="command"
+				value="wordSearch">
+
 			<button type="submit" class="w3-btn w3-black"
 				style="margin-left: 10px; margin-bottom: 5px;">GO!</button>
 		</form>
@@ -127,15 +127,16 @@
 			<form class="w3-container w3-card-4"
 				style="padding-top: 20px; font-size: 14px;"
 				action="${pageContext.request.contextPath}/stationController">
-				<select class="w3-select w3-border w3-padding" id="city_high" name="city_high"  onfocus="loadByCityHigh();" onselect="document.getElementById('city_high').blur">
+				<select class="w3-select w3-border w3-padding" id="city_high"
+					name="city_high" onfocus="loadByCityHigh();"
+					onchange="document.getElementById('city_middle').focus();">
 					<option value="" disabled selected>도시 선택</option>
-					
-				</select> 
-				<select class="w3-select w3-border w3-padding"
-					style="margin-top: 15px;" id="city_middle" name="city_middle" onfocus="loadByCityMiddle();">
+
+				</select> <select class="w3-select w3-border w3-padding"
+					style="margin-top: 15px;" id="city_middle" name="city_middle"
+					onfocus="loadByCityMiddle();">
 					<option value="" disabled selected>시/군/구 선택</option>
-				</select> 
-				<input type="hidden" name="command" value="selectSearch">
+				</select> <input type="hidden" name="command" value="selectSearch">
 				<button class="w3-btn w3-black w3-right w3-margin w3-padding"
 					type="submit">Search</button>
 			</form>
@@ -158,8 +159,8 @@
 						</tr>
 					</thead>
 					<tr>
-					
-					<!-- for문 돌려야되는 부분  -->
+
+						<!-- for문 돌려야되는 부분  -->
 						<td>a</td>
 						<td>a</td>
 						<td>a</td>
@@ -182,6 +183,7 @@
 	<!-- end of select search -->
 
 	<script>
+		var map;
 		function myMap() {
 			myCenter = new google.maps.LatLng(37.5, 127);
 			var mapOptions = {
@@ -191,7 +193,7 @@
 				draggable : true,
 				mapTypeId : google.maps.MapTypeId.ROADMAP
 			};
-			var map = new google.maps.Map(document.getElementById("googleMap"), mapOptions);
+			map = new google.maps.Map(document.getElementById("googleMap"), mapOptions);
 	
 			var marker = new google.maps.Marker({
 				position : myCenter,
