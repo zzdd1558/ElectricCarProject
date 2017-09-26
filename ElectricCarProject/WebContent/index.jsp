@@ -16,32 +16,30 @@
 	<!-- bars -->
 
 	<!-- before bar -->
-	<div class="w3-bar w3-black">
+	<div class="w3-bar w3-black" style="position:fixed; z-index:1000;">
 		<div class="w3-bar-item w3-hover-red">
 			<a>HOME</a>
 		</div>
 		<div class="w3-bar-item w3-hover-opacity">
 			<a onclick="document.getElementById('login').style.display='block'">ADMIN</a>
 		</div>
-		<div class="w3-bar-item w3-hover-green">
-			<a href="#about">ABOUT</a>
+		<div class="w3-bar-item w3-hover-pink">
+			<a href="#search">SEARCH CHARGER</a>
 		</div>
 		<div class="w3-bar-item w3-hover-blue">
 			<a href="#gallery">GALLERY</a>
 		</div>
+		<div class="w3-bar-item w3-hover-green">
+			<a href="#about">ABOUT</a>
+		</div>
 		<div class="w3-bar-item w3-hover-yellow">
 			<a href="#founders">FOUNDERS</a>
 		</div>
-		<div class="w3-bar-item w3-hover-pink">
-			<a href="#search">SEARCH CHARGER</a>
+		<div onclick="document.getElementById('login').style.display='block'" class="w3-bar-item w3-hover-grey">
+			LOG IN
 		</div>
-		<div class="w3-bar-item w3-hover-grey">
-			<a onclick="document.getElementById('login').style.display='block'">LOG
-				IN</a>
-		</div>
-		<div class="w3-bar-item w3-hover-white">
-			<a onclick="document.getElementById('signup').style.display='block'">SIGN
-				UP</a>
+		<div onclick="document.getElementById('signup').style.display='block'" class="w3-bar-item w3-hover-white">
+			SIGN UP
 		</div>
 	</div>
 
@@ -72,183 +70,21 @@
 	<!-- header -->
 
 	<!-- class="w3-display-container w3-content w3-wide"  -->
+
+
 	<header style="max-width: 100%;" id="home">
-		<img style="width: 100%; height: 700px;" src="img/header/header7.jpg">
-		<div class="w3-display-middle w3-margin-to">
-			<h1 class="w3-xxlarge w3-text-white">
-				<span class="w3-xxxlarge w3-padding w3-black w3-opacity-min"><b>Xeno-Charger</b></span>
-			</h1>
+		<div class="w3-display-container w3-text-white">
+			<img style="width: 100%; height:;" src="img/header/header7.jpg">
+			<div class="w3-display-middle w3-large">Middle</div>
+			<div class="w3-display-middle w3-margin-top">
+				<h1 class="w3-xxlarge w3-text-white">
+					<span class="w3-xxxlarge w3-padding w3-black w3-opacity-min"><b>Xeno-Charger</b></span>
+				</h1>
+			</div>
 		</div>
 	</header>
 
 	<!-- end of header -->
-
-	<!-- about -->
-
-	<div class="w3-container w3-content w3-center w3-padding-48"
-		style="max-width: 1200px" id="about">
-		<h1 class="w3-wide">ABOUT US</h1>
-		<p class="w3-opacity">
-			<i>We Care about our Planet Earth!</i>
-		</p>
-		<hr style="border: 2px solid black">
-		<Br>
-		<br>
-		<p class="w3-justify">We have created a fictional band website.
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-			eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-			ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-			aliquip ex ea commodo consequat. Duis aute irure dolor in
-			reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-			pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-			culpa qui officia deserunt mollit anim id est laborum consectetur
-			adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-			magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-			ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-	</div>
-	<br style="line-height: 20;">
-
-	<!-- end of about -->
-
-	<!-- gallery -->
-
-	<div class="w3-container w3-content w3-center w3-padding-48"
-		style="max-width: 1200px" id="gallery">
-		<h2>GALLERY</h2>
-		<p class="w3-opacity"></p>
-		<hr style="border: 2px solid black">
-	</div>
-
-	<div class="w3-content w3-display-container">
-
-		<div class="w3-display-containe mySlides">
-			<img src="img/slideCharger/charger1.jpg"
-				style="width: 980px; height: 600px;">
-			<div
-				class="w3-display-bottommiddle w3-xlarge w3-container w3-padding-16 w3-black">
-				서울특별시 강남구 서초대로34 스테이션 <br> 평점 : ★★★★☆
-			</div>
-		</div>
-
-		<div class="w3-display-containe mySlides">
-			<img src="img/slideCharger/charger2.jpg"
-				style="width: 980px; height: 600px;">
-			<div
-				class="w3-display-bottommiddle w3-xlarge w3-container w3-padding-16 w3-black">
-				강원도 춘천시 효자로87 스테이션 <br> 평점 : ★★★★★
-			</div>
-		</div>
-
-		<div class="w3-display-containe mySlides">
-			<img src="img/slideCharger/charger3.jpg"
-				style="width: 980px; height: 600px;">
-			<div
-				class="w3-display-bottommiddle w3-xlarge w3-container w3-padding-16 w3-black">
-				전라북도 익산시 익산대로34-3 스테이션 <br> 평점 : ★★★☆
-			</div>
-		</div>
-
-		<div class="w3-display-containe mySlides">
-			<img src="img/slideCharger/charger4.jpg"
-				style="width: 980px; height: 600px;">
-			<div
-				class="w3-display-bottommiddle w3-xlarge w3-container w3-padding-16 w3-black">
-				강원도 강릉시 강남대로13 스테이션 <br> 평점 : ★★★☆
-			</div>
-		</div>
-
-		<div class="w3-display-containe mySlides">
-			<img src="img/slideCharger/charger5.jpg"
-				style="width: 980px; height: 600px;">
-			<div
-				class="w3-display-bottommiddle w3-xlarge w3-container w3-padding-16 w3-black">
-				경상남도 울산시 방이대로77 스테이션 <br> 평점 : ★★★☆
-			</div>
-		</div>
-
-		<div class="w3-display-containe mySlides">
-			<img src="img/slideCharger/charger6.jpg"
-				style="width: 980px; height: 600px;">
-			<div
-				class="w3-display-bottommiddle w3-xlarge w3-container w3-padding-16 w3-black">
-				경기도 안양시 만안대로7-5 스테이션 <br> 평점 : ★★★☆
-			</div>
-		</div>
-
-		<button class="w3-button w3-display-left w3-black"
-			onclick="plusDivs(-1)">&#10094;</button>
-		<button class="w3-button w3-display-right w3-black"
-			onclick="plusDivs(1)">&#10095;</button>
-
-	</div>
-	<br style="line-height: 20;">
-
-	<script>
-		var slideIndex = 1;
-		showDivs(slideIndex);
-	
-		function plusDivs(n) {
-			showDivs(slideIndex += n);
-		}
-	
-		function showDivs(n) {
-			var i;
-			var x = document.getElementsByClassName("mySlides");
-			if (n > x.length) {
-				slideIndex = 1
-			}
-			if (n < 1) {
-				slideIndex = x.length
-			}
-			for (i = 0; i < x.length; i++) {
-				x[i].style.display = "none";
-			}
-			x[slideIndex - 1].style.display = "block";
-		}
-	</script>
-
-	<!-- end of gallery -->
-
-	<!-- founders -->
-
-	<div id="founders"
-		class="w3-container w3-content w3-center w3-padding-48"
-		style="max-width: 1200px; height: 700px;">
-		<h1 class="w3-wide">FOUNDERS OF XENO-CHARGER</h1>
-		<p class="w3-opacity">
-			<i>We have to protect our mother Earth!</i>
-		</p>
-		<hr style="border: 2px solid black">
-		<div class="w3-row w3-padding-32">
-			<div class="w3-third">
-				<img src="img/founders/founder1.jpg" class="w3-round"
-					alt="Random Name" style="width: 60%">
-				<p>CHOI</p>
-				<p class="w3-opacity">
-					<i>FOUNDER, CEO, ENGINEER, PLAYBOY</i>
-				</p>
-			</div>
-			<div class="w3-third">
-				<img src="img/founders/founder1.jpg" class="w3-round"
-					alt="Random Name" style="width: 60%">
-				<p>HONG</p>
-				<p class="w3-opacity">
-					<i>FOUNDER , DESIGNER</i>
-				</p>
-			</div>
-			<div class="w3-third">
-				<img src="img/founders/founder1.jpg" class="w3-round"
-					alt="Random Name" style="width: 60%">
-				<p>JJONG</p>
-				<p class="w3-opacity">
-					<i>DOG</i>
-				</p>
-			</div>
-		</div>
-	</div>
-	<br style="line-height: 20;">
-
-	<!-- end of founders -->
 
 	<!-- search charger / hidden value = typeSearch -->
 
@@ -363,6 +199,175 @@
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjvtC_0Hr83DsKOtKr0oamgTdwyBtcuho&callback=myMap"></script>
 
 	<!-- end of search charger -->
+
+
+	<!-- gallery -->
+
+	<div class="w3-container w3-content w3-center w3-padding-48"
+		style="max-width: 1200px" id="gallery">
+		<h2>GALLERY</h2>
+		<p class="w3-opacity"></p>
+		<hr style="border: 2px solid black">
+	</div>
+
+	<div class="w3-content w3-display-container">
+
+		<div class="w3-display-containe mySlides">
+			<img src="img/slideCharger/charger1.jpg"
+				style="width: 980px; height: 600px;">
+			<div
+				class="w3-display-bottommiddle w3-xlarge w3-container w3-padding-16 w3-black">
+				서울특별시 강남구 서초대로34 스테이션 <br> 평점 : ★★★★☆
+			</div>
+		</div>
+
+		<div class="w3-display-containe mySlides">
+			<img src="img/slideCharger/charger2.jpg"
+				style="width: 980px; height: 600px;">
+			<div
+				class="w3-display-bottommiddle w3-xlarge w3-container w3-padding-16 w3-black">
+				강원도 춘천시 효자로87 스테이션 <br> 평점 : ★★★★★
+			</div>
+		</div>
+
+		<div class="w3-display-containe mySlides">
+			<img src="img/slideCharger/charger3.jpg"
+				style="width: 980px; height: 600px;">
+			<div
+				class="w3-display-bottommiddle w3-xlarge w3-container w3-padding-16 w3-black">
+				전라북도 익산시 익산대로34-3 스테이션 <br> 평점 : ★★★☆
+			</div>
+		</div>
+
+		<div class="w3-display-containe mySlides">
+			<img src="img/slideCharger/charger4.jpg"
+				style="width: 980px; height: 600px;">
+			<div
+				class="w3-display-bottommiddle w3-xlarge w3-container w3-padding-16 w3-black">
+				강원도 강릉시 강남대로13 스테이션 <br> 평점 : ★★★☆
+			</div>
+		</div>
+
+		<div class="w3-display-containe mySlides">
+			<img src="img/slideCharger/charger5.jpg"
+				style="width: 980px; height: 600px;">
+			<div
+				class="w3-display-bottommiddle w3-xlarge w3-container w3-padding-16 w3-black">
+				경상남도 울산시 방이대로77 스테이션 <br> 평점 : ★★★☆
+			</div>
+		</div>
+
+		<div class="w3-display-containe mySlides">
+			<img src="img/slideCharger/charger6.jpg"
+				style="width: 980px; height: 600px;">
+			<div
+				class="w3-display-bottommiddle w3-xlarge w3-container w3-padding-16 w3-black">
+				경기도 안양시 만안대로7-5 스테이션 <br> 평점 : ★★★☆
+			</div>
+		</div>
+
+		<button class="w3-button w3-display-left w3-black"
+			onclick="plusDivs(-1)">&#10094;</button>
+		<button class="w3-button w3-display-right w3-black"
+			onclick="plusDivs(1)">&#10095;</button>
+
+	</div>
+	<br style="line-height: 20;">
+
+	<script>
+		var slideIndex = 1;
+		showDivs(slideIndex);
+	
+		function plusDivs(n) {
+			showDivs(slideIndex += n);
+		}
+	
+		function showDivs(n) {
+			var i;
+			var x = document.getElementsByClassName("mySlides");
+			if (n > x.length) {
+				slideIndex = 1
+			}
+			if (n < 1) {
+				slideIndex = x.length
+			}
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";
+			}
+			x[slideIndex - 1].style.display = "block";
+		}
+	</script>
+
+	<!-- end of gallery -->
+
+	<!-- about -->
+
+	<div class="w3-container w3-content w3-center w3-padding-48"
+		style="max-width: 1200px" id="about">
+		<h1 class="w3-wide">ABOUT US</h1>
+		<p class="w3-opacity">
+			<i>We Care about our Planet Earth!</i>
+		</p>
+		<hr style="border: 2px solid black">
+		<Br>
+		<br>
+		<p class="w3-justify">We have created a fictional band website.
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+			eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+			ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+			aliquip ex ea commodo consequat. Duis aute irure dolor in
+			reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+			pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+			culpa qui officia deserunt mollit anim id est laborum consectetur
+			adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+			magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+			ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+	</div>
+	<br style="line-height: 20;">
+
+	<!-- end of about -->
+
+	<!-- founders -->
+
+	<div id="founders"
+		class="w3-container w3-content w3-center w3-padding-48"
+		style="max-width: 1200px; height: 700px;">
+		<h1 class="w3-wide">FOUNDERS OF XENO-CHARGER</h1>
+		<p class="w3-opacity">
+			<i>We have to protect our mother Earth!</i>
+		</p>
+		<hr style="border: 2px solid black">
+		<div class="w3-row w3-padding-32">
+			<div class="w3-third">
+				<img src="img/founders/founder1.jpg" class="w3-round"
+					alt="Random Name" style="width: 60%">
+				<p>CHOI</p>
+				<p class="w3-opacity">
+					<i>FOUNDER, CEO, ENGINEER, PLAYBOY</i>
+				</p>
+			</div>
+			<div class="w3-third">
+				<img src="img/founders/founder1.jpg" class="w3-round"
+					alt="Random Name" style="width: 60%">
+				<p>HONG</p>
+				<p class="w3-opacity">
+					<i>FOUNDER , DESIGNER</i>
+				</p>
+			</div>
+			<div class="w3-third">
+				<img src="img/founders/founder1.jpg" class="w3-round"
+					alt="Random Name" style="width: 60%">
+				<p>JJONG</p>
+				<p class="w3-opacity">
+					<i>DOG</i>
+				</p>
+			</div>
+		</div>
+	</div>
+	<br style="line-height: 20;">
+
+	<!-- end of founders -->
+
 
 	<!-- modal -->
 	<!-- modal -->
