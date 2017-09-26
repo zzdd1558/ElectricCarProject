@@ -20,7 +20,6 @@ public class UserTableDAO {
 		return instance;
 	}
 
-	
 	// 일반 유저 회원가입
 	public int insertUser(UserTableDTO user) throws Exception {
 		Connection con = null;
@@ -80,10 +79,9 @@ public class UserTableDAO {
 		try {
 			con = DBUtil.getConnection();
 			pstmt = con.prepareStatement(sql);
-			
-			/** 업데이트 어떤것을 할건지 작성해야함*/
-			
-			
+
+			/** 업데이트 어떤것을 할건지 작성해야함 */
+
 			cnt = pstmt.executeUpdate();
 
 		} catch (Exception e) {
@@ -95,12 +93,31 @@ public class UserTableDAO {
 
 		return cnt;
 	}
-	
-	
-	public int userLogin(String userId , String userPassword){
-		
-		
-		return 0;
+
+	public UserTableDTO userLogin(String userId) throws Exception{
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String sql = "SELECT USER_PASSWORD , USER_SALT_KEY FROM USER_TB WHERE USER_ID = ?";
+		UserTableDTO userDTO = null;
+		try {
+			userDTO = new UserTableDTO();
+			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, userId);
+
+			ResultSet rset = pstmt.executeQuery();
+			if(rset.next()){
+				userDTO.setUserPassword(rset.getString(1));
+				userDTO.setUserSaltKey(rset.getString(2));
+			}
+		} catch (Exception e) {
+			System.out.println("로그인 중 에러 발생!");
+			throw new Exception("로그인 중 에러 발생!");
+		} finally {
+			DBUtil.close(con, pstmt);
+		}
+
+		return userDTO;
 	}
 
 	// USER_TB PK의 최대값 반환
