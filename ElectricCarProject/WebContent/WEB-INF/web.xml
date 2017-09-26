@@ -30,4 +30,14 @@
     <servlet-name>StationController</servlet-name>
     <url-pattern>/stationController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AsyncController</display-name>
+    <servlet-name>AsyncController</servlet-name>
+    <servlet-class>com.Controller.AsyncController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AsyncController</servlet-name>
+    <url-pattern>/asyncController</url-pattern>
+  </servlet-mapping>
 </web-app>
