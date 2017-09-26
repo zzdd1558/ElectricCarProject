@@ -8,12 +8,15 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="stylesheets/bar_a.css">
 <link rel="stylesheet" href="stylesheets/search.css">
+<link rel="stylesheet" href="stylesheets/custom.css">
 <script src="javascripts/script.js"></script>
 <script src="javascripts/asyncEvent.js"></script>
 <title>index.html</title>
+
+
 </head>
 <body>
-'
+	'
 	<!-- bars -->
 
 	<!-- before bar -->
@@ -119,16 +122,32 @@
 		<hr style="border: 2px solid black">
 
 		<!-- search bar -->
-		<form action="${pageContext.request.contextPath}/stationController">
-			<input class="search w3-center" type="text" name="str"
-				placeholder="Search.."> <input type="hidden" name="command"
-				value="wordSearch">
+		<div class="w3-cell-row w3-center" style="width: 99%; margin: auto;">
+			<div class="w3-container w3-cell" style="width: 40%">
+				<select class="w3-select w3-border w3-padding" id="city_high"
+					name="city_high" onfocus="loadByCityHigh();"
+					onchange="document.getElementById('city_middle').focus();">
+					<option value="" disabled selected>도시 선택</option>
+				</select> 
+				<select class="w3-select w3-border w3-padding"
+					style="margin-top: 15px;" id="city_middle" name="city_middle"
+					onfocus="loadByCityMiddle();">
+					<option value="" disabled selected>시/군/구 선택</option>
+				</select>
+				<button class="w3-btn w3-black w3-right w3-margin w3-padding"
+					onclick="sendSearch()">Search</button>
+			</div>
+			<div class="w3-container w3-cell" style="width: 60%">
+				<input class="search w3-center" type="text" name="str"
+					placeholder="Search.."> 
+					<input type="hidden" name="command"
+					value="wordSearch">
 
-			<button type="submit" class="w3-btn w3-black"
-				style="margin-left: 10px; margin-bottom: 5px;">GO!</button>
-		</form>
-		<!-- end of search bar  -->
-
+				<button type="submit" class="w3-btn w3-black"
+					style="margin-left: 10px; margin-bottom: 5px;">GO!</button>
+				<!-- end of search bar  -->
+			</div>
+		</div>
 	</div>
 
 
@@ -136,52 +155,24 @@
 	<!-- select search / hidden value = selectSearch / name:city_high, city_middle / value:1~12 -->
 
 	<div class="w3-cell-row w3-center" style="width: 80%; margin: auto;">
-
-		<div class="w3-container w3-cell" style="width: 35%">
-			<%-- <form class="w3-container w3-card-4"
-				style="padding-top: 20px; font-size: 14px;"
-				action="${pageContext.request.contextPath}/stationController"> --%>
-			<select class="w3-select w3-border w3-padding" id="city_high"
-				name="city_high" onfocus="loadByCityHigh();"
-				onchange="document.getElementById('city_middle').focus();">
-				<option value="" disabled selected>도시 선택</option>
-
-			</select> <select class="w3-select w3-border w3-padding"
-				style="margin-top: 15px;" id="city_middle" name="city_middle"
-				onfocus="loadByCityMiddle();">
-				<option value="" disabled selected>시/군/구 선택</option>
-			</select> <input type="hidden" name="command" value="selectSearch">
-			<button class="w3-btn w3-black w3-right w3-margin w3-padding"
-				onclick="sendSearch()">Search</button>
-			<!-- </form> -->
-		</div>
-
-		<div class="w3-container w3-cell" style="width: 70%">
+		<div class="w3-container w3-cell" style="width: 100%">
 			<!-- 검색된 테이블 id=resultTable -->
 			<div id="resultTable" class="w3-container">
 				<table class="w3-table-all" id="cityListTable">
 					<thead>
 						<tr class="w3-black w3-text-yellow">
-							<th>번호</th>
-							<th>충전소</th>
-							<th>충전기 명칭</th>
-							<th>충전기 상태</th>
-							<th>충전 방식</th>
-							<th>충전기 타입</th>
-							<th>장소</th>
+							<th style="text-align: center">번호</th>
+							<th style="text-align: center">충전소</th>
+							<th style="text-align: center">충전기 명칭</th>
+							<th style="text-align: center">충전기 상태</th>
+							<th style="text-align: center">충전 방식</th>
+							<th style="text-align: center">충전기 타입</th>
+							<th style="text-align: center">장소</th>
+							<th style="text-align: center">보기</th>
 						</tr>
 					</thead>
-					<tbody>
-						<tr>
-							<!-- for문 돌려야되는 부분  -->
-							<td>a</td>
-							<td>a</td>
-							<td>a</td>
-							<td>a</td>
-							<td>a</td>
-							<td>a</td>
-							<td>a</td>
-						</tr>
+					<tbody id="tableTbody">
+
 					</tbody>
 				</table>
 			</div>
@@ -454,12 +445,15 @@
 						<br>
 
 						<div class=" w3-padding w3-center">
-							<select class="w3-select w3-border w3-padding" onfocus="loadByCityHigh();"
-				onchange="document.getElementById('city_middle').focus();" id="city_high" name="city_high">
+							<select class="w3-select w3-border w3-padding"
+								onfocus="loadByCityHigh();"
+								onchange="document.getElementById('city_middle').focus();"
+								id="city_high" name="city_high">
 								<option disabled selected>시/도</option>
 
 							</select> <select class="w3-select w3-border w3-padding"
-								style="margin-top: 15px;" d="city_middle" name="city_middle" onfocus="loadByCityMiddle();">
+								style="margin-top: 15px;" d="city_middle" name="city_middle"
+								onfocus="loadByCityMiddle();">
 								<option disabled selected>시/군/구</option>
 							</select>
 						</div>

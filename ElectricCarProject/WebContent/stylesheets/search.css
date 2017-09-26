@@ -15,5 +15,5 @@ input[type=text].search{
 }
 
 input[type=text]:focus.search {
-    width: 30%;
+    width: 50%;
 }

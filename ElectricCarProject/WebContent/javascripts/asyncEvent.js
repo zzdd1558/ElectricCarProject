@@ -67,15 +67,25 @@ function sendSearch(){
 
 /* sendSearch() 에서 사용하는 콜백 함수 */
 function getCityListDomController(){
-	document.getElementById("cityListTable").innerHTML = '';
+	document.getElementById("tableTbody").innerHTML = '';
 	var msg = '';
 	var jsonData = JSON.parse(httpRequest.responseText);
-
+	console.log(jsonData);
 	for(var i = 0; i< jsonData.data.length; i++){
-        msg = msg + ``;
+        msg = msg + 
+        `
+        <tr>
+        <td width="87" style="text-align: center">${i+1}</td>
+        <td width="97" style="text-align: center">${jsonData.data[i].csCodeNm}</td>
+        <td width="154" style="text-align: center">${jsonData.data[i].cpNameNm}</td>
+        <td width="154" style="text-align: center">${jsonData.data[i].cpStatNm}</td>
+        <td width="130" style="text-align: center">${jsonData.data[i].chargerTypeNm}</td>
+        <td width="154" style="text-align: center">${jsonData.data[i].cpTypeNm}</td>
+        <td width="154" style="text-align: center">${jsonData.data[i].cityHighNm} ${jsonData.data[i].cityMiddleNm} ${jsonData.data[i].cityLowNm}</td>
+        <td><button style="width: 74px;">보기</button></td>
+        </tr>`;
     }
-
-    document.getElementById("cityListTable").innerHTML = msg;
+    document.getElementById("tableTbody").innerHTML = msg;
 }
 
 

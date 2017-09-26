@@ -32,7 +32,8 @@ public class AsyncController extends HttpServlet {
 	}
 
 	protected void getCityList(HttpServletRequest request, HttpServletResponse response, String command) {
-		response.setContentType("application/json; charset=UTF-8");
+		/*response.setContentType("application/json; charset=UTF-8");*/
+		response.setContentType("text/html; charset=utf-8");
 		List<?> list = null;
 		try {
 			if("clickHigh".equals(command)){
