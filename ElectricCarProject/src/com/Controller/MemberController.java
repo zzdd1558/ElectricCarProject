@@ -38,6 +38,26 @@ public class MemberController extends HttpServlet {
 			/** 정보 */
 			System.out.println("정보확인");
 			info(request, response);
+		} else if ("logout".equals(command)) {
+			/** 로그아웃 */
+			System.out.println("logouttttttttt");
+			logout(request, response);
+			System.out.println("logouttttttttt");
+		}	
+		
+	}
+
+	private void logout(HttpServletRequest request, HttpServletResponse response) {
+		System.out.println("logouttttttttt");
+		
+		HttpSession session = request.getSession();
+		session.getCreationTime();
+		session = null;
+		System.out.println("logouttttttttt");
+		try {
+			response.sendRedirect("index.jsp");
+		} catch (IOException e) {
+			System.out.println("로그아웃 도중 에러발생!");
 		}
 	}
 
@@ -59,6 +79,7 @@ public class MemberController extends HttpServlet {
 				session = request.getSession();
 				System.out.println("sisisisisisiswisi" + userDTO.getManagerCdFk());
 				session.setAttribute("managerKey", userDTO.getManagerCdFk());
+				
 			} else {
 				/** 세셩 생성 X And 로그인 페이지로 다시 이동 */
 
