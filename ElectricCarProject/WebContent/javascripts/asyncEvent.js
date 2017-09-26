@@ -75,14 +75,14 @@ function getCityListDomController(){
         msg = msg + 
         `
         <tr>
-        <td width="87" style="text-align: center">${i+1}</td>
-        <td width="97" style="text-align: center">${jsonData.data[i].csCodeNm}</td>
-        <td width="154" style="text-align: center">${jsonData.data[i].cpNameNm}</td>
-        <td width="154" style="text-align: center">${jsonData.data[i].cpStatNm}</td>
-        <td width="130" style="text-align: center">${jsonData.data[i].chargerTypeNm}</td>
-        <td width="154" style="text-align: center">${jsonData.data[i].cpTypeNm}</td>
-        <td width="154" style="text-align: center">${jsonData.data[i].cityHighNm} ${jsonData.data[i].cityMiddleNm} ${jsonData.data[i].cityLowNm}</td>
-        <td><button style="width: 74px;">보기</button></td>
+        <td width="" style="text-align: center">${i+1}</td>
+        <td width="" style="text-align: center">${jsonData.data[i].csCodeNm}</td>
+        <td width="" style="text-align: center">${jsonData.data[i].cpNameNm}</td>
+        <td width="" style="text-align: center">${jsonData.data[i].cpStatNm}</td>
+        <td width="" style="text-align: center">${jsonData.data[i].chargerTypeNm}</td>
+        <td width="" style="text-align: center">${jsonData.data[i].cpTypeNm}</td>
+        <td width="" style="text-align: center">${jsonData.data[i].cityHighNm} ${jsonData.data[i].cityMiddleNm} ${jsonData.data[i].cityLowNm}</td>
+        <td><button style="width: 74px; text-align:center">보기</button></td>
         </tr>`;
     }
     document.getElementById("tableTbody").innerHTML = msg;

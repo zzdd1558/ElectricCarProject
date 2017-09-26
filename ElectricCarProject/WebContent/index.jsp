@@ -125,28 +125,32 @@
 
 		<!-- search bar -->
 
-		<div class="w3-container w3-cell" style="width: 35%">
-			<select class="w3-select w3-border w3-padding" id="city_high"
-				name="city_high" onfocus="loadByCityHigh();"
-				onchange="document.getElementById('city_middle').focus();">
-				<option value="" disabled selected>도시 선택</option>
-
-			</select> <select class="w3-select w3-border w3-padding"
-				style="margin-top: 15px;" id="city_middle" name="city_middle"
-				onfocus="loadByCityMiddle();">
-				<option value="" disabled selected>시/군/구 선택</option>
-			</select> <input type="hidden" name="command" value="selectSearch">
-			<button class="w3-btn w3-black w3-right w3-margin w3-padding"
-				onclick="sendSearch()">Search</button>
+		<div class="w3-bar" style="width:100%; height:70px;  text-align:left;">
+			
+			<div style="width:15%; margin-left:10px;" class="w3-bar-item"><select  style="width:100%" class="w3-select w3-border" 
+				id="city_high" name="city_high" onfocus="loadByCityHigh();"
+					onchange="document.getElementById('city_middle').focus();">
+					<option value="" disabled selected>도시 선택</option>
+				</select></div>
+			
+			<div style="width:15%;  margin-left:10px;" class="w3-bar-item"><select style="width:100%" class="w3-select w3-border"
+					 id="city_middle" name="city_middle"
+					onfocus="loadByCityMiddle();">
+					<option value="" disabled selected>시/군/구 선택</option>
+				</select> <input type="hidden" name="command" value="selectSearch"></div>
+			
+			<div style="width:10%;  margin-left:10px;" class="w3-bar-item"><button style="width:100%" class="w3-btn w3-black "
+					onclick="sendSearch()">Search</button></div>
+			
+			<div style="width:10%; " class="w3-bar-item w3-right"><button type="submit" style="width:82px; border:1px solid black;" class="w3-btn w3-black">검색</button></div>
+			
+			<div style="width:39%;  margin-right:10px;" class="w3-bar-item w3-right"><input style="width:100%;border:1px solid black;" class="search w3-center" 
+					type="text" name="str"
+					placeholder="Search.."> <input type="hidden" name="command"
+					value="wordSearch"></div>
 		</div>
-		<div class="w3-container w3-cell" style="width: 55%">
-			<input class="search w3-center" type="text" name="str"
-				placeholder="Search.."> <input type="hidden" name="command"
-				value="wordSearch">
 
-			<button type="submit" class="w3-btn w3-black"
-				style="margin-left: 10px; margin-bottom: 5px;">GO!</button>
-		</div>
+		
 		<!-- end of search bar  -->
 
 	</div>
