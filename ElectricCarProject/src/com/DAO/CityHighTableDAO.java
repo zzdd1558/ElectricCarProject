@@ -2,6 +2,9 @@ package com.DAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.DTO.CityHighTableDTO;
 import com.DTO.CityLowTableDTO;
@@ -95,6 +98,32 @@ public class CityHighTableDAO {
 		return cnt;
 	}
 	
+	public List<CityHighTableDTO> getCityHighList() throws Exception{
+		List<CityHighTableDTO> list = null;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		String sql = "SELECT * FROM CITY_HIGH_TB";
+
+		try {
+			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement(sql);
+			rset = pstmt.executeQuery();
+			list = new ArrayList<>();
+			
+			while(rset.next()){
+				list.add(new CityHighTableDTO(rset.getInt(1), rset.getString(2)));
+			}
+
+		} catch (Exception e) {
+			System.out.println("CityHigh List를 가져오는 중 에러 발생!");
+			throw new Exception("CityHigh List를 가져오는 중 에러 발생!");
+		} finally {
+			DBUtil.close(con, pstmt, rset);
+		}
+		return list;
+		
+	}
 	
 	// CITY_HIGH_TB PK의 최대값 반환
 	public int getMaxNo() throws Exception {

@@ -2,7 +2,11 @@ package com.DAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
+import com.DTO.CityHighTableDTO;
 import com.DTO.CityMiddleTableDTO;
 import com.DTO.CpNameTableDTO;
 import com.Utils.DBUtil;
@@ -96,6 +100,34 @@ public class CityMiddleTableDAO {
 		return cnt;
 	}
 	
+	
+	public List<CityMiddleTableDTO> getCityMiddleList(int selected) throws Exception{
+		List<CityMiddleTableDTO> list = null;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		String sql = "SELECT * FROM CITY_Middle_TB WHERE CITY_HIGH_NO_FK = ?";
+
+		try {
+			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, selected);
+			rset = pstmt.executeQuery();
+			list = new ArrayList<>();
+			
+			while(rset.next()){
+				list.add(new CityMiddleTableDTO(rset.getInt(1), rset.getInt(2) , rset.getString(3)));
+			}
+
+		} catch (Exception e) {
+			System.out.println("CityMiddle List를 가져오는 중 에러 발생!");
+			throw new Exception("CityMiddle List를 가져오는 중 에러 발생!");
+		} finally {
+			DBUtil.close(con, pstmt, rset);
+		}
+		return list;
+		
+	}
 	
 	// CITY_MIDDLE_TB PK의 최대값 반환
 	public int getMaxNo() throws Exception {
