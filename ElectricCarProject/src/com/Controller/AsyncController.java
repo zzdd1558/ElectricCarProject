@@ -1,39 +1,53 @@
 package com.Controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class AsyncController
- */
+import com.DAO.CityHighTableDAO;
+import com.DAO.CityMiddleTableDAO;
+import com.DTO.CityHighTableDTO;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
 public class AsyncController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public AsyncController() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String command = request.getParameter("kinds");
+		System.out.println(command);
+		if ("clickHigh".equals(command)) {
+			getCityList(request, response, command);
+		}else if ( "clickMiddle".equals(command)){
+			getCityList(request,response,command);
+		}
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+	protected void getCityList(HttpServletRequest request, HttpServletResponse response, String command) {
+		response.setContentType("application/json; charset=UTF-8");
+		List<?> list = null;
+		try {
+			if("clickHigh".equals(command)){
+				list = new CityHighTableDAO().getInstance().getCityHighList();
+			}else if ("clickMiddle".equals(command)){
+				list = new CityMiddleTableDAO().getInstance().getCityMiddleList(Integer.parseInt(request.getParameter("check")));
+			}
+			
+			JSONArray jsonArray = JSONArray.fromObject(list);
+			JSONObject jsonObject = new JSONObject();
+			jsonObject.put("data", jsonArray);
 
+			response.getWriter().println(jsonObject);
+		} catch (Exception e1) {
+			System.out.println("JSON 데이터 반환중 에러 발생!");
+		}
+	}
 }

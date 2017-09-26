@@ -71,11 +71,6 @@
 		%>
 	</div>
 	
-
-
-
-
-
 	<!-- end of bars -->
 
 	<!-- header -->
@@ -132,14 +127,13 @@
 			<form class="w3-container w3-card-4"
 				style="padding-top: 20px; font-size: 14px;"
 				action="${pageContext.request.contextPath}/stationController">
-				<select class="w3-select w3-border w3-padding" name="city_high" onclick="loadByCityHigh();" onchange="loadBy">
-					<option value="" disabled selected>city_high</option>
-					<option value="1">서울특별시</option>
+				<select class="w3-select w3-border w3-padding" id="city_high" name="city_high"  onfocus="loadByCityHigh();" onselect="document.getElementById('city_high').blur">
+					<option value="" disabled selected>도시 선택</option>
 					
 				</select> 
 				<select class="w3-select w3-border w3-padding"
-					style="margin-top: 15px;" name="city_middle" onclick="loadByCityMiddle();">
-					<option value="" disabled selected>city_middle</option>
+					style="margin-top: 15px;" id="city_middle" name="city_middle" onfocus="loadByCityMiddle();">
+					<option value="" disabled selected>시/군/구 선택</option>
 				</select> 
 				<input type="hidden" name="command" value="selectSearch">
 				<button class="w3-btn w3-black w3-right w3-margin w3-padding"
