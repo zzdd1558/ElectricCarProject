@@ -82,7 +82,7 @@ function getCityListDomController(){
         <td width="130" style="text-align: center">${jsonData.data[i].chargerTypeNm}</td>
         <td width="154" style="text-align: center">${jsonData.data[i].cpTypeNm}</td>
         <td width="154" style="text-align: center">${jsonData.data[i].cityHighNm} ${jsonData.data[i].cityMiddleNm} ${jsonData.data[i].cityLowNm}</td>
-        <td><button style="width: 74px;">보기</button></td>
+        <td><button style="width: 74px;" onclick="asyncGoogleMapView()">보기</button></td>
         </tr>`;
     }
     document.getElementById("tableTbody").innerHTML = msg;
