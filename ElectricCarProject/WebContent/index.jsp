@@ -14,7 +14,10 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="javascripts/script.js"></script>
 <script src="javascripts/asyncEvent.js"></script>
-<script src="javascripts/signUpAsyncEvent.js"></script>
+<script src="javascripts/signUpEvent.js"></script>
+<script src="javascripts/googleMapAsyncEvent.js"></script>
+<script src="javascripts/jquery-3.2.1.js"></script>
+	
 <title>index.html</title>
 </head>
 <body>
@@ -177,6 +180,7 @@
 							<th style="text-align: center;">충전기 타입</th>
 							<th style="text-align: center;">장소</th>
 							<th style="text-align: center;">보기</th>
+							<th><button id="test">test</button></th>
 						</tr>
 					</thead>
 					<tbody id="tableTbody">
@@ -200,7 +204,7 @@
 			myCenter = new google.maps.LatLng(37.5, 127);
 			var mapOptions = {
 				center : myCenter,
-				zoom : 5,
+				zoom : 10,
 				scrollwheel : true,
 				draggable : true,
 				mapTypeId : google.maps.MapTypeId.ROADMAP

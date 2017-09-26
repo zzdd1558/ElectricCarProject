@@ -1,7 +1,9 @@
-
+/**
+ * 
+ */
 /* CITY_HIGH_TB에 있는 시의 정보 리스트 가져오는 비동기 함수*/
 function signUpLoadByCityHigh(){
-	sendRequest(getContextPath() + '/asyncController', 'kinds=clickHigh', cityHighAjaxDomController, 'POST');
+	sendRequest(getContextPath() + '/asyncController', 'kinds=clickHigh', signUpCityHighAjaxDomController, 'POST');
 }
 
 /* loadByCityHigh()에서 사용하는 콜백 함수 */
@@ -24,7 +26,7 @@ function signUpCityHighAjaxDomController(){
 function signUpLoadByCityMiddle(){
 	var cityHigh = document.getElementById("sign_city_high").selectedIndex;
 	var optionValue = document.getElementsByTagName("option")[cityHigh].value;
-	sendRequest(getContextPath() + '/asyncController', 'kinds=clickMiddle&check=' + optionValue, cityMiddleAjaxDonController, 'POST');
+	sendRequest(getContextPath() + '/asyncController', 'kinds=clickMiddle&check=' + optionValue, signUpCityMiddleAjaxDonController, 'POST');
 }
 
 /* loadByCityMiddle()에서 사용하는 콜백 함수 */
