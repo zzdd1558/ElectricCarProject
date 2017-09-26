@@ -2,30 +2,33 @@ package com.DAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
 
 import com.DTO.ChargerDataTableDTO;
 import com.DTO.ChargerTypeTableDTO;
+import com.DTO.GetChargerDataInfoDTO;
 import com.Utils.DBUtil;
 
 public class ChargerDataTableDAO {
-	
+
 	private static ChargerDataTableDAO instance;
-	
-	public static ChargerDataTableDAO getInstance(){
-		if(instance == null){
+
+	public static ChargerDataTableDAO getInstance() {
+		if (instance == null) {
 			instance = new ChargerDataTableDAO();
 		}
 		return instance;
 	}
 
-	// CHARGER_DATA_TB에서 입력된 String 값을 가지고 있는 로우들을 result set으로 먼저 받고, 결국에는 list형태로 반환받는다.
-	public List<ChargerDataTableDTO> wordSearchChargerData(String str) throws Exception{
+	// CHARGER_DATA_TB에서 입력된 String 값을 가지고 있는 로우들을 result set으로 먼저 받고, 결국에는
+	// list형태로 반환받는다.
+	public List<ChargerDataTableDTO> wordSearchChargerData(String str) throws Exception {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		int cnt = 0;
 		String sql = "SELECT * FROM CHARGER_DATA_TB WHERE ";
-		
+
 		try {
 
 			con = DBUtil.getConnection();
@@ -40,7 +43,6 @@ public class ChargerDataTableDAO {
 		}
 		return null;
 	}
-	
 
 	// CHARGER_DATA_TB에 Code 데이터 INSERT
 	public int insertChargerData(ChargerDataTableDTO chargerData) throws Exception {
@@ -111,9 +113,9 @@ public class ChargerDataTableDAO {
 		try {
 			con = DBUtil.getConnection();
 			pstmt = con.prepareStatement(sql);
-			
-			/* update 할 것들 작성.*/
-			
+
+			/* update 할 것들 작성. */
+
 			cnt = pstmt.executeUpdate();
 
 		} catch (Exception e) {
@@ -124,9 +126,43 @@ public class ChargerDataTableDAO {
 		}
 		return cnt;
 	}
-	
+
+	public List<GetChargerDataInfoDTO> getChargerDataList() throws Exception{
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		StringBuilder sql = null;
+		try {
+			con = DBUtil.getConnection();
+			sql = new StringBuilder();
+			
+			sql.append("SELECT CHARGERDT.CHARGER_DATA_NO_PK ,CHT.CITY_HIGH_NM ,");
+			sql.append("CMT.CITY_MIDDLE_NM , CLT.CITY_LOW_NM, CCT.CS_CODE_NM ,");
+			sql.append(" CNT.CP_NAME_NM , CST.CP_STAT_NM , CHARGERTT.CHARGER_TYPE_NM , CTT.CP_TYPE_NM, CHARGERDT.LAT , CHARGERDT.LONGI");
+			sql.append(" FROM CHARGER_DATA_TB CHARGERDT ");
+			sql.append(" INNER JOIN CS_CODE_TB CCT ON CHARGERDT.CS_CODE_CD_FK = CCT.CS_CODE_CD_PK");
+			sql.append(" INNER JOIN CP_NAME_TB CNT ON CHARGERDT.CP_NAME_CD_FK = CNT.CP_NAME_CD_PK");
+			sql.append(" INNER JOIN CP_STAT_TB CST ON CHARGERDT.CP_STAT_CD_FK = CST.CP_STAT_CD_PK");
+			sql.append(" INNER JOIN CP_TYPE_TB CTT ON CHARGERDT.CP_TYPE_CD_FK = CTT.CP_TYPE_CD_PK");
+			sql.append(" INNER JOIN CHARGER_TYPE_TB CHARGERTT ON CHARGERDT.CHARGER_TYPE_CD_FK = CHARGERTT.CHARGER_TYPE_CD_PK");
+			sql.append(" INNER JOIN CITY_LOW_TB CLT ON CHARGERDT.CITY_LOW_NO_FK = CLT.CITY_LOW_NO_PK");
+			sql.append(" INNER JOIN CITY_MIDDLE_TB CMT ON CLT.CITY_MIDDLE_NO_FK = CMT.CITY_MIDDLE_NO_PK");
+			sql.append(" INNER JOIN CITY_HIGH_TB CHT ON CMT.CITY_HIGH_NO_FK = CHT.CITY_HIGH_NO_PK ");
+			sql.append(" WHERE CLT.CITY_LOW_NO_PK = ?");
+			sql.append(" ORDER BY CHARGERDT.CHARGER_DATA_NO_PK ASC");
+			System.out.println(sql.toString());
+			/*pstmt = con.prepareStatement(sql.toString());*/
+		} catch (SQLException e) {
+			System.out.println("getChargerDataList 정보를 가져오는중 에러 발생!");
+			throw new Exception("getChargerDataList 정보를 가져오는중 에러 발생!");
+		}
+		
+		return null;
+		
+	}
+
 	// CHARGER_DATA_TB PK의 최대값 반환
-	public int getMaxNo() throws Exception{
+	public int getMaxNo() throws Exception {
 		return CommonDAO.getMaxNo("SELECT (MAX(CHARGER_NO_PK)+1) AS max_NO FROM CHARGER_DATA_TB");
 	}
 

@@ -126,8 +126,10 @@ public class CityMiddleTableDAO {
 			DBUtil.close(con, pstmt, rset);
 		}
 		return list;
-		
-	}
+	} // end of getCityMiddleList
+	
+	
+	
 	
 	// CITY_MIDDLE_TB PK의 최대값 반환
 	public int getMaxNo() throws Exception {

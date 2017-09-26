@@ -159,7 +159,7 @@
 		<div class="w3-container w3-cell" style="width: 70%">
 			<!-- 검색된 테이블 id=resultTable -->
 			<div id="resultTable" class="w3-container">
-				<table class="w3-table-all">
+				<table class="w3-table-all" id="cityListTable">
 					<thead>
 						<tr class="w3-black w3-text-yellow">
 							<th>번호</th>

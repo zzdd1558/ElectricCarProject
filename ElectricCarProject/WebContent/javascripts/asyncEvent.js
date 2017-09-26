@@ -43,7 +43,6 @@ function cityHighAjaxDomController(){
 function loadByCityMiddle(){
 	var cityHigh = document.getElementById("city_high").selectedIndex;
 	var optionValue = document.getElementsByTagName("option")[cityHigh].value;
-	
 	sendRequest(getContextPath() + '/asyncController', 'kinds=clickMiddle&check=' + optionValue, cityMiddleAjaxDonController, 'POST');
 }
 
@@ -51,7 +50,6 @@ function loadByCityMiddle(){
 function cityMiddleAjaxDonController(){
 	document.getElementById("city_middle").innerHTML = '';
     var jsonData = JSON.parse(httpRequest.responseText);
-    console.log(jsonData);
     var msg = '';
     for(var i = 0 ; i< jsonData.data.length; i++){
     	msg = msg + `<option value='${jsonData.data[i].cityMiddleNoPk}'>${jsonData.data[i].cityMiddleNm}</option>`;
@@ -62,11 +60,31 @@ function cityMiddleAjaxDonController(){
 
 /* search 버튼 클릭시 이벤트*/
 function sendSearch(){
-	
-	sendRequest(stationController,a,b,c);
-	
+    var highIndexValue =getOptionIndexValue("city_high");
+    var middleIndexValue =getOptionIndexValue("city_middle");
+    sendRequest(getContextPath()+'/stationController',`high=${highIndexValue}&middle=${middleIndexValue}&command=selectSearch`,getCityList,"GET");
 }
 
+
+function getCityList(){
+	document.getElementById("cityListTable").innerHTML = '';
+	var msg = '';
+	var jsonData = JSON.parse(httpRequest.responseText);
+
+	for(var i = 0; i< jsonData.data.length; i++){
+        msg = msg + ``;
+    }
+
+    document.getElementById("cityListTable").innerHTML = msg;
+}
+
+
+/* select > option selected index 가져오기*/
+function getOptionIndexValue(id){
+	var tag = document.getElementById(id);
+	return tag.options[tag.selectedIndex].value; 
+	
+}
 
 /* 절대 경로 구하기 */
 function getContextPath(){
