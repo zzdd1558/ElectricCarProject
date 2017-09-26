@@ -62,11 +62,11 @@ function cityMiddleAjaxDonController(){
 function sendSearch(){
     var highIndexValue =getOptionIndexValue("city_high");
     var middleIndexValue =getOptionIndexValue("city_middle");
-    sendRequest(getContextPath()+'/stationController',`high=${highIndexValue}&middle=${middleIndexValue}&command=selectSearch`,getCityList,"GET");
+    sendRequest(getContextPath()+'/stationController',`high=${highIndexValue}&middle=${middleIndexValue}&command=selectSearch`,getCityListDomController,"GET");
 }
 
-
-function getCityList(){
+/* sendSearch() 에서 사용하는 콜백 함수 */
+function getCityListDomController(){
 	document.getElementById("cityListTable").innerHTML = '';
 	var msg = '';
 	var jsonData = JSON.parse(httpRequest.responseText);
