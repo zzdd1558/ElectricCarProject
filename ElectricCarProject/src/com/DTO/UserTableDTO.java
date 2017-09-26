@@ -105,6 +105,28 @@ public class UserTableDTO {
 	public void setCityMiddleNoFk(int cityMiddleNoFk) {
 		this.cityMiddleNoFk = cityMiddleNoFk;
 	}
-	
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("UserTableDTO [userNoPk=");
+		builder.append(userNoPk);
+		builder.append(", userId=");
+		builder.append(userId);
+		builder.append(", userPassword=");
+		builder.append(userPassword);
+		builder.append(", userNm=");
+		builder.append(userNm);
+		builder.append(", userPhoneNo=");
+		builder.append(userPhoneNo);
+		builder.append(", userSaltKey=");
+		builder.append(userSaltKey);
+		builder.append(", managerCdFk=");
+		builder.append(managerCdFk);
+		builder.append(", cityMiddleNoFk=");
+		builder.append(cityMiddleNoFk);
+		builder.append("]");
+		return builder.toString();
+	}
 	
 }

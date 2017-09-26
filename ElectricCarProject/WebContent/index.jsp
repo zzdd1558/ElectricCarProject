@@ -446,11 +446,12 @@
 
 						<div class=" w3-padding w3-center">
 							<select class="w3-select w3-border w3-padding">
-								<option value="1" disabled selected>city_high</option>
+								<option value="1" selected>city_high</option>
 
-							</select> <select class="w3-select w3-border w3-padding"
+							</select>
+							<select class="w3-select w3-border w3-padding"
 								style="margin-top: 15px;" name="cityMiddleNoFk">
-								<option value="1" disabled selected>city_middle</option>
+								<option value="1" selected>city_middle</option>
 							</select>
 						</div>
 

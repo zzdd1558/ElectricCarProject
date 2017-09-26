@@ -37,8 +37,12 @@ public class UserTableDAO {
 			pstmt.setString(5, user.getUserPhoneNo());
 			pstmt.setString(6, user.getUserSaltKey());
 			pstmt.setInt(7, user.getCityMiddleNoFk());
+			System.out.println("---------------" + user);
 			cnt = pstmt.executeUpdate();
+			
+			System.out.println(4);
 		} catch (Exception e) {
+			e.printStackTrace();
 			System.out.println("회원가입중 에러 발생!");
 			throw new Exception("회원가입중 에러 발생!");
 		} finally {
