@@ -20,6 +20,7 @@ public class UserTableDAO {
 		return instance;
 	}
 
+	
 	// 일반 유저 회원가입
 	public int insertUser(UserTableDTO user) throws Exception {
 		Connection con = null;
@@ -93,6 +94,13 @@ public class UserTableDAO {
 		}
 
 		return cnt;
+	}
+	
+	
+	public int userLogin(String userId , String userPassword){
+		
+		
+		return 0;
 	}
 
 	// USER_TB PK의 최대값 반환
