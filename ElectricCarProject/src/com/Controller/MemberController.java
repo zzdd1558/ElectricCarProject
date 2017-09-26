@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.DAO.UserTableDAO;
 import com.DTO.UserTableDTO;
@@ -16,34 +17,76 @@ public class MemberController extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+<<<<<<< HEAD
+=======
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("text/html; charset=UTF-8");
+>>>>>>> branch 'master' of https://github.com/zzdd1558/ElectricCarProject.git
 		String command = request.getParameter("command");
 
+		
 		if ("login".equals(command)) {
+<<<<<<< HEAD
+=======
+			/** 로그인 */
+>>>>>>> branch 'master' of https://github.com/zzdd1558/ElectricCarProject.git
 			login(request, response);
 		} else if ("signup".equals(command)) {
+<<<<<<< HEAD
+=======
+			/** 회원가입 */	
+			System.out.println("가입");
+>>>>>>> branch 'master' of https://github.com/zzdd1558/ElectricCarProject.git
 			insertMember(request, response);
 			System.out.println("가입성공");
 		} else if ("modify".equals(command)) {
+<<<<<<< HEAD
+=======
+			/** 수정 */
+			System.out.println("수정");
+>>>>>>> branch 'master' of https://github.com/zzdd1558/ElectricCarProject.git
 			modify(request, response);
 			System.out.println("수정성공");
 		} else if ("info".equals(command)) {
+<<<<<<< HEAD
+=======
+			/** 정보 */
+>>>>>>> branch 'master' of https://github.com/zzdd1558/ElectricCarProject.git
 			System.out.println("정보확인");
 			info(request, response);
 		}
 	}
 
-	private void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	// 로그인 영역
+	private void login(HttpServletRequest request, HttpServletResponse response) {
+		HttpSession session = null;
 		String userId = request.getParameter("userId");
 		String userPassword = request.getParameter("userPassword");
 		UserTableDAO userDAO = UserTableDAO.getInstance();
 		UserTableDTO userDTO = null;
+<<<<<<< HEAD
 		String url = "index.jsp";
 		
+=======
+
+>>>>>>> branch 'master' of https://github.com/zzdd1558/ElectricCarProject.git
 		try {
 			userDTO = userDAO.userLogin(userId);
+			boolean loginCheck = EncryptionUtil.passwordConfirm(userPassword, userDTO);
+			if (loginCheck) {
+				/** 세션 생성 */
+				session = request.getSession();
+				session.setAttribute("managerKey", userDTO.getManagerCdFk());
+			} else {
+				/** 세셩 생성 X And 로그인 페이지로 다시 이동 */
+				
+			}
+			
+			response.sendRedirect("index.jsp");
 		} catch (Exception e) {
 			System.out.println("ID 비교중 에러 발생");
 		}
+<<<<<<< HEAD
 		
 		boolean loginCheck = EncryptionUtil.passwordConfirm(userPassword, userDTO);
 		if (loginCheck) {
@@ -59,9 +102,37 @@ public class MemberController extends HttpServlet {
 		request.setAttribute("managerCdFk", userDTO.getManagerCdFk());
 
 		request.getRequestDispatcher(url).forward(request, response);
+=======
+
+>>>>>>> branch 'master' of https://github.com/zzdd1558/ElectricCarProject.git
 	}
 
+	// 회원가입 영역
 	private void insertMember(HttpServletRequest request, HttpServletResponse response) {
+<<<<<<< HEAD
+=======
+		UserTableDTO userDTO = new UserTableDTO();
+		UserTableDAO userDAO = UserTableDAO.getInstance();
+		userDTO.setUserId(request.getParameter("userId"));
+		userDTO.setUserId(request.getParameter("userNm"));
+		userDTO.setUserId(request.getParameter("userPhoneNo"));
+		userDTO.setUserId(request.getParameter("cityMiddleNoFk"));
+
+		// 비밀번호 암호화와 Salt Key 내부적으로 setter 동작
+		EncryptionUtil.passwordEncryption(request.getParameter("userPassword"), userDTO);
+
+		int result = 0;
+		try {
+			result = userDAO.insertUser(userDTO);
+
+			if (result == 0) {
+				System.out.println("데이터 삽입 오류");
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+>>>>>>> branch 'master' of https://github.com/zzdd1558/ElectricCarProject.git
 
 	}
 
