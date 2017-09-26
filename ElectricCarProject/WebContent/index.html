@@ -190,14 +190,14 @@ function showDivs(n) {
 	
 </div>
 
-<!-- select search / hidden value = selectSearch / name:city_high / value:1~12 -->
+<!-- select search / hidden value = selectSearch / name:city_high, city_middle / value:1~12 -->
 
 <div class="w3-cell-row w3-center" style="width:80%; margin:auto;">
   
   <div class="w3-container w3-cell" style="width:35%">
 		<form class="w3-container w3-card-4" style="padding-top:20px; font-size:14px;" action="">
 		  <select class="w3-select w3-border w3-padding" name="city_high">
-		    <option value="" disabled selected>Area</option>
+		    <option value="" disabled selected>city_high</option>
 			<option value="1">서울특별시</option>
 			<option value="2">강원도</option>
 			<option value="3">경기도</option>
@@ -211,7 +211,10 @@ function showDivs(n) {
 			<option value="11">제주도</option>
 			<option value="12">충청도</option>
 		  </select>
-		  <input type="hidden" value="selectSearch">
+		  <select class="w3-select w3-border w3-padding" style="margin-top:15px;" name="city_middle">
+		    <option value="" disabled selected>city_middle</option>
+		  </select>
+		  <input type="hidden" name="command" value="selectSearch" >
 		  <button class="w3-btn w3-black w3-right w3-margin w3-padding" type="submit">Search</button>
 		</form>
   </div>
@@ -293,11 +296,11 @@ function myMap()
 						<div class="w3-padding" style="margin:auto; text-align:center;">UserID</div>
 						<input
 							style="width: 100%; margin: auto; border: 1px solid white; background-color:white;"
-							class="w3-input w3-center" type="text" name="id" required>
+							class="w3-input w3-center" type="text" name="userId" required>
 						<div class="w3-padding" style="margin:auto; text-align:center;">PassWord</div>
 						<input
 							style="width: 100%; margin: auto; border: 1px solid white; background-color:white;"
-							class="w3-input w3-center" type="password" name="password" required>
+							class="w3-input w3-center" type="password" name="userPassword" required>
 						<br> <br> <br> <input type="hidden" name="command" value="login">
 						<button style="backgrond-color:; width: 50%; float: left;"
 							class="w3-button w3-padding w3-hover-black" type="submit">
@@ -323,8 +326,8 @@ function myMap()
 
 	<div class="w3-container w3-text-white">
 		<div id="signup" class="w3-modal">
-			<div class="w3-modal-content w3-animate-right w3-card-4"
-				style="max-width: 400px; height: 730px; background-color: black; border: 1px solid white;">
+			<div class="w3-modal-content w3-animate-right w3-card-4 w3-center"
+				style="max-width: 400px; height: 760px; background-color: black; border: 1px solid white;">
 				<div class="w3-center">
 					<br> <img src="img/login/open8-2.JPG" alt="login"
 						style="width: 70%; height: 70%;" class="w3-hover-sepia w3-margin">
@@ -346,13 +349,30 @@ function myMap()
 						<div class="w3-padding" style="margin: auto; text-align: center;">PhoneNumber</div>
 						<input
 							style="width: 100%; margin: auto; border: 1px solid white; background-color:white;"
-							class="w3-input" type="text" name="phone" required> <br>
+							class="w3-input" type="text" name="phone" required> <br> 
+							
 						<div class=" w3-padding w3-center">
-							<input class="w3-margin w3-padding " type="checkbox"
-								name="check1" value="">check1 <input
-								class="w3-margin w3-padding " type="checkbox" name="check2"
-								value="">check2
+						<select class="w3-select w3-border w3-padding" name="city_high">
+							<option value="" disabled selected>city_high</option>
+							<option value="1">서울특별시</option>
+							<option value="2">강원도</option>
+							<option value="3">경기도</option>
+							<option value="4">경상도</option>
+							<option value="5">광주광역시</option>
+							<option value="6">대구광역시</option>
+							<option value="7">대전광역시</option>
+							<option value="8">부산광역시</option>
+							<option value="9">울산광역시</option>
+							<option value="10">전라도</option>
+							<option value="11">제주도</option>
+							<option value="12">충청도</option>
+						</select> <select class="w3-select w3-border w3-padding"
+							style="margin-top: 15px;" name="city_middle">
+							<option value="" disabled selected>city_middle</option>
+						</select>
 						</div>
+						
+						
 						<input type="hidden" name="command" value="signup">
 						<button style="backgrond-color:; width: 50%; float: left;"
 							class="w3-button w3-padding w3-hover-black" type="submit">
