@@ -163,9 +163,6 @@
 	<!-- select search / hidden value = selectSearch / name:city_high, city_middle / value:1~12 -->
 
 	<div class="w3-cell-row w3-center" style="width: 80%; margin: auto;">
-
-
-
 		<div class="w3-container w3-cell" style="width: 100%">
 			<!-- 검색된 테이블 id=resultTable -->
 			<div id="resultTable" class="w3-container">
@@ -180,7 +177,6 @@
 							<th style="text-align: center;">충전기 타입</th>
 							<th style="text-align: center;">장소</th>
 							<th style="text-align: center;">보기</th>
-							<th><button id="test">test</button></th>
 						</tr>
 					</thead>
 					<tbody id="tableTbody">
@@ -195,28 +191,6 @@
 		</div>
 	</div>
 	<br style="line-height: 20;">
-
-	<!-- end of select search -->
-
-	<script>
-		var map;
-		function myMap() {
-			myCenter = new google.maps.LatLng(37.5, 127);
-			var mapOptions = {
-				center : myCenter,
-				zoom : 10,
-				scrollwheel : true,
-				draggable : true,
-				mapTypeId : google.maps.MapTypeId.ROADMAP
-			};
-			map = new google.maps.Map(document.getElementById("googleMap"), mapOptions);
-	
-			var marker = new google.maps.Marker({
-				position : myCenter,
-			});
-			marker.setMap(map);
-		}
-	</script>
 	<script
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjvtC_0Hr83DsKOtKr0oamgTdwyBtcuho&callback=myMap"></script>
 

@@ -71,18 +71,19 @@ function getCityListDomController() {
 	document.getElementById("tableTbody").innerHTML = '';
 	var msg = '';
 	var jsonData = JSON.parse(httpRequest.responseText);
+	console.log(jsonData)
 	for (var i = 0; i < jsonData.data.length; i++) {
 		msg = msg +
 			`
         <tr>
-        <td width="" style="text-align: center">${i + 1}</td>
-        <td width="" style="text-align: center">${jsonData.data[i].csCodeNm}</td>
-        <td width="" style="text-align: center">${jsonData.data[i].cpNameNm}</td>
-        <td width="" style="text-align: center">${jsonData.data[i].cpStatNm}</td>
-        <td width="" style="text-align: center">${jsonData.data[i].chargerTypeNm}</td>
-        <td width="" style="text-align: center">${jsonData.data[i].cpTypeNm}</td>
-        <td width="" style="text-align: center">${jsonData.data[i].cityHighNm} ${jsonData.data[i].cityMiddleNm} ${jsonData.data[i].cityLowNm}</td>
-        <td><button style="width: 74px; text-align:center">보기</button></td>
+        <td style="text-align: center">${i + 1}</td>
+        <td style="text-align: center">${jsonData.data[i].csCodeNm}</td>
+        <td style="text-align: center">${jsonData.data[i].cpNameNm}</td>
+        <td style="text-align: center">${jsonData.data[i].cpStatNm}</td>
+        <td style="text-align: center">${jsonData.data[i].chargerTypeNm}</td>
+        <td style="text-align: center">${jsonData.data[i].cpTypeNm}</td>
+        <td style="text-align: center">${jsonData.data[i].cityHighNm} ${jsonData.data[i].cityMiddleNm} ${jsonData.data[i].cityLowNm}</td>
+        <td><button style="width: 74px; text-align:center"onclick="myMap(${jsonData.data[i].lat},${jsonData.data[i].longi});">보기</button></td>
         </tr>`;
 	}
 	document.getElementById("tableTbody").innerHTML = msg;

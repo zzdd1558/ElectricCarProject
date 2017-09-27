@@ -23,7 +23,6 @@ public class AsyncController extends HttpServlet {
 		
 
 		String command = request.getParameter("kinds");
-		System.out.println(command);
 		if ("clickHigh".equals(command)) {
 			getCityList(request, response, command);
 		}else if ( "clickMiddle".equals(command)){

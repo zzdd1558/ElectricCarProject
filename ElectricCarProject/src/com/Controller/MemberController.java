@@ -27,16 +27,12 @@ public class MemberController extends HttpServlet {
 			login(request, response);
 		} else if ("signup".equals(command)) {
 			/** 회원가입 */
-			System.out.println("가입");
 			insertMember(request, response);
-			System.out.println("가입성공");
 		} else if ("modify".equals(command)) {
 			/** 수정 */
-			System.out.println("수정");
 			modify(request, response);
 		} else if ("info".equals(command)) {
 			/** 정보 */
-			System.out.println("정보확인");
 			info(request, response);
 		} else if ("logout".equals(command)) {
 			/** 로그아웃 */
@@ -73,7 +69,6 @@ public class MemberController extends HttpServlet {
 			if (loginCheck) {
 				/** 세션 생성 */
 				session = request.getSession();
-				System.out.println("sisisisisisiswisi" + userDTO.getManagerCdFk());
 				session.setAttribute("managerKey", userDTO.getManagerCdFk());
 				
 			} else {
