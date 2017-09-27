@@ -49,15 +49,15 @@
 			<a href="#founders">FOUNDERS</a>
 		</div>
 		<div onclick="document.getElementById('login').style.display='block'"
-			class="w3-bar-item w3-hover-grey">LOG IN</div>
+			class="w3-bar-item w3-hover-grey w3-right">LOG IN</div>
 		<div onclick="document.getElementById('signup').style.display='block'"
-			class="w3-bar-item w3-hover-white">SIGN UP</div>
+			class="w3-bar-item w3-hover-white w3-right">SIGN UP</div>
 
 		<%
 			} else if (session.getAttribute("managerKey").equals(new Integer(2))) {
 		%>
 		<div class="w3-bar-item w3-hover-red">
-			<a href="#home">HOME</a>
+			<a href="${pageContext.request.contextPath}/index.jsp">HOME</a>
 		</div>
 		<div class="w3-bar-item w3-hover-green">
 			<a href="adminViews/manageChargerView.jsp">MANAGE CHARGERS</a>
@@ -71,23 +71,20 @@
 		<div class="w3-bar-item w3-hover-pink">
 			<a href="adminViews/modifyInfoView.jsp">MODIFY INFO</a>
 		</div>
-		<div class="w3-bar-item w3-hover-grey">
-			<a href="adminViews/emailView.jsp">E-MAIL</a>
-		</div>
-		<div class="w3-bar-item w3-hover-white">
+		<div class="w3-bar-item w3-hover-white w3-right">
 			<a href="memberController?command=logout">LOGOUT</a>
 		</div>
 
 		<%
 			} else if (session.getAttribute("managerKey").equals(new Integer(1))) {
 		%>
-		<div class="w3-bar-item w3-hover-red">HOME</div>
-		<div class="w3-bar-item w3-hover-green">ABOUT</div>
-		<div class="w3-bar-item w3-hover-blue">GALLERY</div>
-		<div class="w3-bar-item w3-hover-yellow">FOUNDERS</div>
-		<div class="w3-bar-item w3-hover-pink">SEARCH CHARGER</div>
-		<div class="w3-bar-item w3-hover-grey">MYPAGE</div>
-		<div class="w3-bar-item w3-hover-white">LOGOUT</div>
+		<div class="w3-bar-item w3-hover-red"><a href="#home">HOME</a></div>
+		<div class="w3-bar-item w3-hover-pink"><a href="#search">SEARCH CHARGER</a></div>
+		<div class="w3-bar-item w3-hover-blue"><a href="#gallery">GALLERY</a></div>
+		<div class="w3-bar-item w3-hover-green"><a href="#about">ABOUT</a></div>
+		<div class="w3-bar-item w3-hover-yellow"><a href="#founders">FOUNDERS</a></div>
+		<div class="w3-bar-item w3-hover-grey"><a href="${pageContext.request.contextPath}/memberViews/myPageView.jsp">MYPAGE</a></div>
+		<div class="w3-bar-item w3-hover-white w3-right"><a href="memberController?command=logout">LOGOUT</a></div>
 		<%
 			}
 		%>

@@ -44,7 +44,7 @@
 
 	<div class="w3-bar w3-black" style="position: fixed; z-index: 1000;">
 		<div class="w3-bar-item w3-hover-red">
-			<a href="#home">HOME</a>
+			<a href="${pageContext.request.contextPath}/index.jsp">HOME</a>
 		</div>
 		<div class="w3-bar-item w3-hover-green">
 			<a
@@ -65,11 +65,7 @@
 				href="${ pageContext.request.contextPath }/adminViews/modifyInfoView.jsp">MODIFY
 				INFO</a>
 		</div>
-		<div class="w3-bar-item w3-hover-grey">
-			<a
-				href="${ pageContext.request.contextPath }/adminViews/emailView.jsp">E-MAIL</a>
-		</div>
-		<div class="w3-bar-item w3-hover-white">
+		<div class="w3-bar-item w3-hover-white w3-right">
 			<a
 				href="${ pageContext.request.contextPath }/memberController?command=logout">LOGOUT</a>
 		</div>
@@ -94,8 +90,9 @@
 			<h2>DATA TABLES</h2>
 			<br style="line-height: 4">
 			
-			<div class="w3-half">
-				<div id="chartdiv"></div>
+			
+			<div>
+				<div id="chartdiv" style="width:70%; margin:auto;" ></div>
 			</div>
 		</div>
 		<div class="w3-row-padding">
