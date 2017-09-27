@@ -42,10 +42,7 @@
 		<div class="w3-bar-item w3-hover-pink">
 			<a href="../adminViews/modifyInfoView.jsp">MODIFY INFO</a>
 		</div>
-		<div class="w3-bar-item w3-hover-grey">
-			<a href="../adminViews/emailView.jsp">E-MAIL</a>
-		</div>
-		<div class="w3-bar-item w3-hover-white">
+		<div class="w3-bar-item w3-hover-white w3-right">
 			<a href="../memberController?command=logout">LOGOUT</a>
 		</div>
 	</div>

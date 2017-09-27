@@ -37,7 +37,7 @@ public class MemberController extends HttpServlet {
 		} else if ("logout".equals(command)) {
 			/** 로그아웃 */
 			logout(request, response);
-		}	
+		}
 		
 	}
 
