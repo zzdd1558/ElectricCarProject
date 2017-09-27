@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../stylesheets/bar_a.css">
 <link rel="stylesheet" href="../stylesheets/search.css">
@@ -63,17 +63,17 @@
 
 		<div class="w3-cell-row w3-padding-32">
 
-			<!-- CS Å×ÀÌºí -->
+			<!-- CS í…Œì´ë¸” -->
 			<div class="w3-cell">
 				<div class="w3-container" id="manageTables">
 					<h1 style="font-size:45px;">MEMBER TABLE</h1><br><br>
 					
 					<table class="w3-table">
 						<tr>
-							<th>¾ÆÀÌµð</th>
-							<th>ºñ¹Ð¹øÈ£</th>
-							<th>ÀÌ¸§</th>
-							<th>¿¬¶ôÃ³</th>
+							<th>ì•„ì´ë””</th>
+							<th>ë¹„ë°€ë²ˆí˜¸</th>
+							<th>ì´ë¦„</th>
+							<th>ì—°ë½ì²˜</th>
 							<th style="width:20%"></th>
 						</tr>
 						<tr>
@@ -81,8 +81,8 @@
 							<td>Smith</td>
 							<td>50</td>
 							<td>Jill</td>
-							<td><button class="w3-button w3-black">¼öÁ¤</button>
-								<button class="w3-button w3-black">»èÁ¦</button></td>
+							<td><button class="w3-button w3-black">ìˆ˜ì •</button>
+								<button class="w3-button w3-black">ì‚­ì œ</button></td>
 
 						</tr>
 						<tr>
@@ -90,16 +90,16 @@
 							<td>Jackson</td>
 							<td>94</td>
 							<td>Eve</td>
-							<td><button class="w3-button w3-black">¼öÁ¤</button>
-								<button class="w3-button w3-black">»èÁ¦</button></td>
+							<td><button class="w3-button w3-black">ìˆ˜ì •</button>
+								<button class="w3-button w3-black">ì‚­ì œ</button></td>
 						</tr>
 						<tr>
 							<td>Adam</td>
 								<td>Johnson</td>
 							<td>67</td>
 							<td>Adam</td>
-							<td><button class="w3-button w3-black">¼öÁ¤</button>
-								<button class="w3-button w3-black">»èÁ¦</button></td>
+							<td><button class="w3-button w3-black">ìˆ˜ì •</button>
+								<button class="w3-button w3-black">ì‚­ì œ</button></td>
 						</tr>
 					</table>
 
@@ -108,16 +108,16 @@
 						<form
 							action="${pageContext.request.contextPath}/memberController">
 							<input style="margin-top:20px;" class="search w3-left" type="text" name="str"
-								placeholder="ÀÌ¸§°Ë»ö"	> <input type="hidden"
+								placeholder="ì´ë¦„ê²€ìƒ‰"	> <input type="hidden"
 								name="command" value="searchName">
 
 							<button type="submit" class="w3-btn w3-black w3-left"
 								style="margin-top:25px; margin-left:10px; margin-bottom:5px;">GO!</button>
 						</form>
 						<!-- end of search bar  -->
-						<!-- °ü¸®ÀÚ Ãß°¡ ¹öÆ° -->
-							<button class="w3-button w3-black w3-right" style="margin-top:20px;">°ü¸®ÀÚÃß°¡</button>						
-						<!-- °ü¸®ÀÚ Ãß°¡ ¹öÆ° -->
+						<!-- ê´€ë¦¬ìž ì¶”ê°€ ë²„íŠ¼ -->
+							<button class="w3-button w3-black w3-right" style="margin-top:20px;">ê´€ë¦¬ìžì¶”ê°€</button>						
+						<!-- ê´€ë¦¬ìž ì¶”ê°€ ë²„íŠ¼ -->
 					</div>
 				</div>
 			</div>

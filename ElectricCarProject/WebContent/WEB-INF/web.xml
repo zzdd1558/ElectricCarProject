@@ -40,4 +40,14 @@
     <servlet-name>AsyncController</servlet-name>
     <url-pattern>/asyncController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ChartDraw</display-name>
+    <servlet-name>ChartDraw</servlet-name>
+    <servlet-class>com.Controller.ChartDraw</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ChartDraw</servlet-name>
+    <url-pattern>/chartDraw</url-pattern>
+  </servlet-mapping>
 </web-app>

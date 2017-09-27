@@ -1,33 +1,41 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="../stylesheets/bar_a.css">
-<link rel="stylesheet" href="../stylesheets/search.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<script src="../javascripts/script.js"></script>
-<script src="../javascripts/asyncEvent.js"></script>
+<link rel="stylesheet"
+	href="${ pageContext.request.contextPath }/stylesheets/statisticsView.css" />
+<link rel="stylesheet"
+	href="${ pageContext.request.contextPath }/stylesheets/bar_a.css" />
+<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script
+	src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+<link rel="stylesheet"
+	href="https://www.amcharts.com/lib/3/plugins/export/export.css"
+	type="text/css" media="all" />
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+<script
+	src="${ pageContext.request.contextPath }/javascripts/asyncEvent.js"></script>
+<script
+	src="${ pageContext.request.contextPath }/javascripts/AMchart.js"></script>
 <style>
-#manageTables tr, th, td {
-	border: 1px solid black;
-	align: center;
-}
-#manageTables button {
-	margin-left: 10px;
-}
-.w3-third {
-	min-height: 400px;
-	max-height:500px;
-	border:1px solid black;
-	padding:10px 10px 10px 10px;
-	background-color:gray;
-	
+#chartdiv {
+	width: 100%;
+	height: 500px;
 }
 
+.amcharts-export-menu-top-right {
+	top: 10px;
+	right: 0;
+}
 </style>
+
+
+
 <title>Insert title here</title>
 </head>
 <body>
@@ -39,26 +47,36 @@
 			<a href="#home">HOME</a>
 		</div>
 		<div class="w3-bar-item w3-hover-green">
-			<a href="../adminViews/manageChargerView.jsp">MANAGE CHARGERS</a>
+			<a
+				href="${ pageContext.request.contextPath }/adminViews/manageChargerView.jsp">MANAGE
+				CHARGERS</a>
 		</div>
 		<div class="w3-bar-item w3-hover-green">
-			<a href="../adminViews/manageMemberView.jsp">MANAGE MEMBERS</a>
+			<a
+				href="${ pageContext.request.contextPath }/adminViews/manageMemberView.jsp">MANAGE
+				MEMBERS</a>
 		</div>
 		<div class="w3-bar-item w3-hover-yellow">
-			<a href="../adminViews/statisticsView.jsp">STATISTICS</a>
+			<a
+				href="${ pageContext.request.contextPath }/adminViews/statisticsView.jsp">STATISTICS</a>
 		</div>
 		<div class="w3-bar-item w3-hover-pink">
-			<a href="../adminViews/modifyInfoView.jsp">MODIFY INFO</a>
+			<a
+				href="${ pageContext.request.contextPath }/adminViews/modifyInfoView.jsp">MODIFY
+				INFO</a>
 		</div>
 		<div class="w3-bar-item w3-hover-grey">
-			<a href="../adminViews/emailView.jsp">E-MAIL</a>
+			<a
+				href="${ pageContext.request.contextPath }/adminViews/emailView.jsp">E-MAIL</a>
 		</div>
 		<div class="w3-bar-item w3-hover-white">
-			<a href="../memberController?command=logout">LOGOUT</a>
+			<a
+				href="${ pageContext.request.contextPath }/memberController?command=logout">LOGOUT</a>
 		</div>
 	</div>
 
 	<!-- end of bar -->
+
 
 	<!-- The Section -->
 	<div class="w3-container w3-content w3-center w3-padding-32"
@@ -67,36 +85,30 @@
 		<p class="w3-opacity">
 			<i>check out latest statistics!</i>
 		</p>
-		<hr style="border:2px solid black;">
+		<hr style="border: 2px solid black;">
 
-	<!-- ½ÇÁ¦ ÄÁÅÙÃ÷ ½ÃÀÛ -->
+		<!-- ì‹¤ì œ ì»¨í…ì¸  ì‹œìž‘ -->
 
-		<div class="w3-row-padding w3-center" >
-			<br style="line-height:3"><h1>DATA TABLES</h1><br style="line-height:7">
-			<div class="w3-third ">
-			<!-- ±×·¡ÇÁÀÚ¸® -->
-			</div>
-			<div class="w3-third">
-			<!-- ±×·¡ÇÁÀÚ¸® -->
-			</div>
-			<div class="w3-third">
-			<!-- ±×·¡ÇÁÀÚ¸® -->
+		<div class="w3-row-padding w3-center">
+			<br style="line-height: 3">
+			<h1>DATA TABLES</h1>
+			<br style="line-height: 7">
+			
+			<div class="w3-half">
+				<div id="chartdiv"></div>
 			</div>
 		</div>
 		<div class="w3-row-padding">
-			<div class="w3-third">
-			<!-- ±×·¡ÇÁÀÚ¸® -->
+			<div class="w3-half">
+				<div id="chartdiv"></div>
 			</div>
-			<div class="w3-third">
-			<!-- ±×·¡ÇÁÀÚ¸® -->
-			</div>
-			<div class="w3-third">
-			<!-- ±×·¡ÇÁÀÚ¸® -->
+			<div class="w3-half">
+				<div id="chartdiv"></div>
 			</div>
 		</div>
 
 
-		<!-- ½ÇÁ¦ ÄÁÅÙÃ÷ ³¡ -->
+		<!-- ì‹¤ì œ ì»¨í…ì¸  ë -->
 
 	</div>
 

@@ -1,0 +1,14 @@
+#manageTables tr, th, td {
+	border: 1px solid black;
+	align: center;
+}
+#manageTables button {
+	margin-left: 10px;
+}
+.w3-third {
+	min-height: 400px;
+	max-height:500px;
+	border:1px solid black;
+	padding:10px 10px 10px 10px;
+	background-color:white;
+}
