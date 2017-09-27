@@ -75,7 +75,8 @@ public class MemberController extends HttpServlet {
 				/** 세셩 생성 X And 로그인 페이지로 다시 이동 */
 
 			}
-			response.getWriter().println("<script>alert('로그인',(function(){location.href = 'index.jsp'})());</script>");
+			response.sendRedirect("index.jsp");
+			/*response.getWriter().println("<script>alert('로그인',(function(){location.href = 'index.jsp'})());</script>");*/
 		} catch (Exception e) {
 			System.out.println("ID 비교중 에러 발생");
 		}

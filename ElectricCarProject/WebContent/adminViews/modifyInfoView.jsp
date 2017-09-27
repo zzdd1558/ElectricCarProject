@@ -1,9 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet"
+	href="${ pageContext.request.contextPath }/stylesheets/statisticsView.css" />
+<link rel="stylesheet"
+	href="${ pageContext.request.contextPath }/stylesheets/bar_a.css" />
 <title>Insert title here</title>
 </head>
 <body>
@@ -12,7 +19,7 @@
 
 	<div class="w3-bar w3-black" style="position: fixed; z-index: 1000;">
 		<div class="w3-bar-item w3-hover-red">
-			<a href="#home">HOME</a>
+			<a href="${pageContext.request.contextPath}/index.jsp">HOME</a>
 		</div>
 		<div class="w3-bar-item w3-hover-green">
 			<a href="../adminViews/manageChargerView.jsp">MANAGE CHARGERS</a>

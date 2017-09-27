@@ -57,7 +57,7 @@
 			} else if (session.getAttribute("managerKey").equals(new Integer(2))) {
 		%>
 		<div class="w3-bar-item w3-hover-red">
-			<a href="index.jsp">HOME</a>
+			<a href="${pageContext.request.contextPath}/index.jsp">HOME</a>
 		</div>
 		<div class="w3-bar-item w3-hover-green">
 			<a href="adminViews/manageChargerView.jsp">MANAGE CHARGERS</a>
@@ -99,7 +99,7 @@
 	<header style="max-width: 100%;" id="home">
 		<div class="w3-display-container w3-text-white">
 			<img style="width: 100%; height:;" src="images/header/header7.jpg">
-			<div class="w3-display-middle w3-large">Middle</div>
+			<div class="w3-display-middle w3-large"></div>
 			<div class="w3-display-middle w3-margin-top">
 				<h1 class="w3-xxlarge w3-text-white">
 					<span class="w3-xxxlarge w3-padding w3-black w3-opacity-min"><b>Xeno-Charger</b></span>

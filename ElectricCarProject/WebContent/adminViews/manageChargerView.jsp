@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
@@ -28,7 +28,7 @@
 
 	<div class="w3-bar w3-black" style="position: fixed; z-index: 1000;">
 		<div class="w3-bar-item w3-hover-red">
-			<a href="#home">HOME</a>
+			<a href="${pageContext.request.contextPath}/index.jsp">HOME</a>
 		</div>
 		<div class="w3-bar-item w3-hover-green">
 			<a href="../adminViews/manageChargerView.jsp">MANAGE CHARGERS</a>
@@ -60,11 +60,11 @@
 
 		<div class="w3-cell-row w3-padding-32">
 
-			<!-- CS Å×ÀÌºí -->
+			<!-- CS í…Œì´ë¸” -->
 			<div class="w3-cell">
 				<div class="w3-container" id="manageTables">
 					<h1 style="font-size:45px;">CHARGER TABLE</h1><br>
-					<div><button style="margin-right:1;" class="w3-button w3-black w3-right w3-margin">Ãß°¡</button></div>
+					<div><button style="margin-right:1;" class="w3-button w3-black w3-right w3-margin">ì¶”ê°€</button></div>
 					
 					<table class="w3-table">
 						<tr>
@@ -87,8 +87,8 @@
 							<td>50</td>
 							<td>Smith</td>
 							<td>50</td>
-							<td><button class="w3-button w3-black">¼öÁ¤</button>
-								<button class="w3-button w3-black">»èÁ¦</button></td>
+							<td><button class="w3-button w3-black">ìˆ˜ì •</button>
+								<button class="w3-button w3-black">ì‚­ì œ</button></td>
 
 						</tr>
 						<tr>
@@ -100,8 +100,8 @@
 							<td>94</td>
 							<td>Jackson</td>
 							<td>94</td>
-							<td><button class="w3-button w3-black">¼öÁ¤</button>
-								<button class="w3-button w3-black">»èÁ¦</button></td>
+							<td><button class="w3-button w3-black">ìˆ˜ì •</button>
+								<button class="w3-button w3-black">ì‚­ì œ</button></td>
 						</tr>
 						<tr>
 							<td>Adam</td>
@@ -112,8 +112,8 @@
 							<td>67</td>
 							<td>Johnson</td>
 							<td>67</td>
-							<td><button class="w3-button w3-black">¼öÁ¤</button>
-								<button class="w3-button w3-black">»èÁ¦</button></td>
+							<td><button class="w3-button w3-black">ìˆ˜ì •</button>
+								<button class="w3-button w3-black">ì‚­ì œ</button></td>
 						</tr>
 					</table>
 
@@ -125,7 +125,7 @@
 							<select style="width:40%" class="w3-margin w3-select w3-border w3-padding" name="city_high" id="city_high"
 								onfocus="loadByCityHigh();" onchange="document.getElementById('city_middle').focus();">
 								<option value="" disabled selected>city_high</option>
-								<option value="1">¼­¿ïÆ¯º°½Ã</option>
+								<option value="1">ì„œìš¸íŠ¹ë³„ì‹œ</option>
 							</select> 
 							
 							<select class="w3-margin w3-select w3-border w3-padding"
