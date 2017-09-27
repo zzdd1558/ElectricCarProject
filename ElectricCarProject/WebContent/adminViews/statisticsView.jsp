@@ -81,7 +81,7 @@
 	<!-- The Section -->
 	<div class="w3-container w3-content w3-center w3-padding-32"
 		style="max-width: 90%">
-		<h2 class="w3-wide">STATISTICS</h2>
+		<h1 class="w3-wide">STATISTICS</h1>
 		<p class="w3-opacity">
 			<i>check out latest statistics!</i>
 		</p>
@@ -91,8 +91,8 @@
 
 		<div class="w3-row-padding w3-center">
 			<br style="line-height: 3">
-			<h1>DATA TABLES</h1>
-			<br style="line-height: 7">
+			<h2>DATA TABLES</h2>
+			<br style="line-height: 4">
 			
 			<div class="w3-half">
 				<div id="chartdiv"></div>
