@@ -25,7 +25,7 @@ public class UserTableDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		int cnt = 0;
-		String sql = "INSERT INTO USER_TB VALUES ( ? , ? , ? , ? , ? , ? , 2 , ? )";
+		String sql = "INSERT INTO USER_TB VALUES ( ? , ? , ? , ? , ? , ? , 1 , ? )";
 		try {
 			con = DBUtil.getConnection();
 			pstmt = con.prepareStatement(sql);
